@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <title>Card</title>
+    <script type="text/javascript">
+        var queryString = location.search;
+        var urlParams = new URLSearchParams(queryString);
+ 
+    </script>
+</head>
+
+<body>
+    <p>Appendix B - XML Development Request for Access.</p>
+    <table border="1">
+        <tr>
+            <td>
+                Today's Date
+            </td>
+            <td>
+                <script> document.write(urlParams.get('tDate'))</script>
+            </td>
+        </tr>
+    </table>
+<!-- ****************************************************** -->
+
+    <p>Trading Partner Information</p>
+    <table border="1">
+        <tr>
+            <td>
+                Trading Partner Name
+            </td>
+            <td>
+                <script> document.write(urlParams.get('pName'))  </script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Contact Name    
+            </td>
+            <td>
+                <script> document.write(urlParams.get('pContactName'))  </script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Contact E-mail
+            </td>
+            <td>
+                <script> document.write(urlParams.get('pEmail'))  </script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Contact Phone
+            </td>
+            <td>
+                <script> document.write(urlParams.get('pPhone'))  </script>
+            </td>
+        </tr>
+    </table>
+
+<!-- ****************************************************** -->
+
+    <p>Development Information (if not trading partner)</p>
+    <table border="1">
+        <tr>
+            <td>Development Company</td>
+            <td>
+            <script> document.write(urlParams.get('dCompany'))  </script>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Contact Name    
+        </td>
+        <td>
+            <script> document.write(urlParams.get('dContactName'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contact E-mail
+        </td>
+        <td>
+            <script> document.write(urlParams.get('dEmail'))  </script>
+        </td>
+    </tr>
+        <tr>
+            <td>
+                Contact Phone
+            </td>
+            <td>
+                <script> document.write(urlParams.get('dPhone'))  </script>
+            </td>
+        </tr>
+    </table>
+<!-- ****************************************************** -->
+<p>Company Sales Contact (Hertz, Dollar, or Thrifty Sales Rep)</p>
+    <table border="1">
+    <tr>
+        <td>
+            Contact Name    
+        </td>
+        <td>
+            <script> document.write(urlParams.get('cContactName'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contact E-mail
+        </td>
+        <td>
+            <script> document.write(urlParams.get('cEmail'))  </script>
+        </td>
+    </tr>
+        <tr>
+            <td>
+                Contact Phone
+            </td>
+            <td>
+                <script> document.write(urlParams.get('cPhone'))  </script>
+            </td>
+        </tr>
+    </table>
+
+<!-- ****************************************************** -->
+<p>Outage Notification Contacts/Helpdesk (if other than above) </p>
+    <table border="1">
+    <tr>
+        <td>
+            Contact Name    
+        </td>
+        <td>
+            <script> document.write(urlParams.get('helpContactName'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contact E-mail
+        </td>
+        <td>
+            <script> document.write(urlParams.get('helpEmail'))  </script>
+        </td>
+    </tr>
+    </table>
+<!-- ****************************************************** -->
+
+<p>For which brands do you have a commercial agreement? (Please check all that apply) </p>
+    <table border="1">
+    <tr>
+        <td>
+            Hertz     
+        </td>
+        <td>
+            <script> document.write(urlParams.get('hCheckbox'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Dollar 
+        </td>
+        <td>
+            <script> document.write(urlParams.get('dCheckbox'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Thrifty 
+        </td>
+        <td>
+            <script> document.write(urlParams.get('tCheckbox'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Firefly 
+        </td>
+        <td>
+            <script> document.write(urlParams.get('fCheckbox'))  </script>
+        </td>
+    </tr>
+    </table>
+<!-- ****************************************************** -->
+
+
+<p>The following information is required prior to providing production access.</p>
+    <table border="1">
+    <tr>
+        <td>
+            Web Site Address (URL) of system being developed:     
+        </td>
+        <td>
+            <script> document.write(urlParams.get('webUrl'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Estimated Live date:    
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Hertz
+        </td>
+        <td>
+            <script> document.write(urlParams.get('hertzLivedate'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Dollar
+        </td>
+        <td>
+            <script> document.write(urlParams.get('dollarLivedate'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Thrifty 
+        </td>
+        <td>
+            <script> document.write(urlParams.get('thriftyLivedate'))  </script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Firefly 
+        </td>
+        <td>
+            <script> document.write(urlParams.get('fireflyLivedate'))  </script>
+        </td>
+    </tr> 
+    </table>
+
+<!-- RQD................. -->
+    
+       
+    <table>
+        <tr>
+        <td>
+            What are the booking source market(s) 
+            (List primary market. If unknown, list country of incorporation)
+        </td>
+        <td>
+            <script> document.write(urlParams.get('bookingSource')) </script>
+        </td>
+        </tr> 
+    </table>
+   
+
+
+    
+   <table border="1">
+        <caption> List rate/booking method(s) replaced by the XML development? </caption>
+        <tr>
+            <td>
+                None (New Partner/New Business) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodNone'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Excalibur (manual via email, phone, fax)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodExcal'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Hertz.com (Microsite, Hertzagent.com, etc.) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodHertz'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dollar.com (Axis.Dollar.com, etc.)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodDollar'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Thrifty.com 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodThrifty'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dollar Thrifty XML (Consumer Services API) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodXml'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                GDS 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodGds'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                HTTPS 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('methodHttps'))</script>
+            </td>
+        </tr> 
+    </table>
+
+
+
+<!-- RQD................. -->
+    
+    <table border="1"> 
+    <caption>Which functionality will be developed (please check all that apply)?</caption>
+        <tr>
+            <td>HERTZ</td>
+        </tr>
+        <tr>    
+            <td>
+                Rate/Shop -(OTA_VehAvailRateRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developRateH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Book - (OTA_VehResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developBookH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                View - (OTA_VehRetResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developViewH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Modify - (OTA_VehModifyRQ/RS)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developModifyH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cancel - (OTA_VehCancel RQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developCancelH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Specific Location Detail - (OTA_VehLocDetailRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developLocationH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Delivery & Collection - (Europe only) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developDeliveryH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Prepay - (Prepaid to Hertz) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developPrepayH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tour Rates - (IT Code with contracted rates) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developTourH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Policy - (OTA_VehLocDetailRQ/RS) - this is the Location Detail Message with the addition of an attribute.
+                Response is different than Location Detail Response. 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developPolicyH'))</script>
+            </td>
+        </tr>
+    </table>
+
+    <!-- RQD................. -->
+
+    <table border="1"> 
+        <tr><td>Dollar</td></tr>
+        <tr>    
+            <td>
+                Rate/Shop -(OTA_VehAvailRateRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developRateH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Book - (OTA_VehResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developBookH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                View - (OTA_VehRetResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developViewH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Modify - (OTA_VehModifyRQ/RS)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developModifyH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cancel - (OTA_VehCancel RQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developCancelH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Specific Location Detail - (OTA_VehLocDetailRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developLocationH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tour Rates - (IT Code with contracted rates) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developTourH'))</script>
+            </td>
+        </tr>
+    </table>
+
+    <!-- *********************** -->
+    <table border="1"> 
+        <tr><td>Thrify</td></tr>
+        <tr>    
+            <td>
+                Rate/Shop -(OTA_VehAvailRateRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developRateH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Book - (OTA_VehResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developBookH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                View - (OTA_VehRetResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developViewH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Modify - (OTA_VehModifyRQ/RS)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developModifyH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cancel - (OTA_VehCancel RQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developCancelH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Specific Location Detail - (OTA_VehLocDetailRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developLocationH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tour Rates - (IT Code with contracted rates) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developTourH'))</script>
+            </td>
+        </tr>
+    </table>
+    
+    <!-- *********************** -->
+    
+    <table border="1"> 
+        <tr><td>Firefly</td></tr>
+        <tr>    
+            <td>
+                Rate/Shop -(OTA_VehAvailRateRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developRateH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Book - (OTA_VehResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developBookH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                View - (OTA_VehRetResRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developViewH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Modify - (OTA_VehModifyRQ/RS)
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developModifyH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cancel - (OTA_VehCancel RQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developCancelH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Specific Location Detail - (OTA_VehLocDetailRQ/RS) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developLocationH'))</script>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tour Rates - (IT Code with contracted rates) 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('developTourH'))</script>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- *********************** -->
+
+    <table border="1">
+        <caption>What is the expected total daily volume of requests/transactions?</caption>
+        <tr>
+            <td>
+                Hertz
+            </td>
+            <td> <script> document.write(urlParams.get('volH'))</script> </td>
+        </tr>
+        <tr>
+            <td>
+                Dollar
+            </td>
+            <td> <script> document.write(urlParams.get('volD'))</script> </td>
+        </tr>
+        <tr>
+            <td>
+                Firefly
+            </td>
+            <td> <script> document.write(urlParams.get('volF'))</script> </td>
+        </tr>
+        <tr>
+            <td>
+                Thrifty
+            </td>
+            <td> <script> document.write(urlParams.get('volT'))</script> </td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <td>
+            What is the expected time range for peak requests/transactions?
+            What is the expected transaction volume during peak usage?
+            (List peak hours during the day and time zone)?
+            </td>
+            <td>
+                <script> document.write(urlParams.get('expTime'))</script> 
+            </td>
+        </tr>
+
+    </table>
+    
+    <!-- *********************** -->
+
+    <table border="1">
+        <tr>
+            <td>
+                How many vehicles will you display on your site (maximum 5 vehicles)? 
+            </td>
+            <td>
+                <script> document.write(urlParams.get('numVehicles'))</script> 
+            </td>
+        </tr>
+
+    </table>
+
+       <!-- *********************** -->
+
+       <table border="1">
+            <tr>
+                <td>
+                    List internal timeout value for both rate requests and booking requests.
+                    How long will your system wait for the response?
+                </td>
+                <td>
+                    <script> document.write(urlParams.get('numVehicles'))</script> 
+                </td>
+            </tr>
+
+        </table>
+         <!-- *********************** -->
+
+       <table border="1">
+            <tr>
+                <td>
+                	List contact information for your support/help desk (name, email address, and phone number)?
+                </td>
+                <td>
+                    <script> document.write(urlParams.get('cotactInfo'))</script> 
+                </td>
+            </tr>
+
+        </table>
+
+<!-- *********************** -->
+
+       <table border="1">
+            <tr>
+                <td>
+                	List email address for system access to the Hertz Digital Asset Library (http://Hertz.Worktribe.com)? 
+                </td>
+                <td>
+                    <script> document.write(urlParams.get('libEmail'))</script> 
+                </td>
+            </tr>
+
+        </table>
+
+<!-- *********************** -->
+
+    <table border="1">
+        <tr>
+            <td>
+                List the IATA number(s) to be used :
+            </td>
+            <td>
+                <script> document.write(urlParams.get('iata'))</script> 
+            </td>
+        </tr>
+
+    </table>
+        
+<!-- *********************** -->
+
+    <table border="1">
+        <tr>
+            <td>
+                List the IP address(s) to be used :
+            </td>
+            <td>
+                <script> document.write(urlParams.get('ip'))</script> 
+            </td>
+        </tr>
+
+    </table>
+        
+
+
+    </body>
+    </html>
+        
