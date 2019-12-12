@@ -1,0 +1,117 @@
+body{
+    color: rgb(24, 22, 22);
+    background-color: black;
+}
+#appendix,h2 {
+    color:darkslategrey; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    align-items: center;
+}
+
+input[type="text"],input[type="email"],input[type="number"]{
+    /* opacity: 0.5; */
+    /* color: aliceblue; */
+    width: 35%;
+    height: 25px;
+    color: black;
+    background-color: white ;
+    border:#1b2735 solid 1px;
+    margin-right: 40%;
+        
+}
+textarea{
+    width: 35%;
+    height: 45px;
+    color: black;
+    background-color: white ;
+    border:#1b2735 solid 1px;
+    border-radius: 3px;
+    margin-right: 40%;
+}
+
+input{
+    color: black;
+    background-color: white ;
+    /* border: none; */
+    font-family:"Ride",Muli,Helvetica,Arial,sans-serif;
+    
+    /* margin-left: 2%; */
+    
+    /* opacity: 0.5; */
+}
+
+input[type="submit"]{
+    /* opacity: 0.7; */
+    width: 25%;
+}
+
+input[type="text"]:not(.unique),[type="number"]:not(.unique),[type="email"]:not(.unique){
+    float: right;
+}
+form{
+    /* margin-left: 20%; */
+    /* border: 1px solid darkgray; */
+    border: 1px solid grey;
+    background-color: white;
+    
+}
+html {
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    /* overflow: hidden; */
+}
+#mainDiv{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 10%; */
+}
+
+#appendix{
+    text-align: center;
+    font-size: x-large;
+    /* margin-top: 100px; */
+}
+
+#subBtn{
+    background-color: #ffd100;
+    width: 100%;
+    font-weight: bold;
+}
+#dateToRight{
+    float: right;
+    font-weight: 600;    
+}
+/* input:focus{
+    opacity: 0;
+} */
+
+input[id="tDate"]{
+    border: none;
+}
+
+#checkIfSame{
+    font-weight: 600;
+    font-size: small;
+    font-style: italic;
+    float: left;
+}
+#star{
+    text-align: center;
+    font-weight: 600;
+    font-size: small;
+    font-style: italic;
+}
+
+.grey{
+   
+    font-weight: 450;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #090a0f;
+
+}
+li{
+    list-style: none;
+}
