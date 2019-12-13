@@ -21,6 +21,11 @@ input[type="text"],input[type="email"],input[type="number"]{
     margin-right: 40%;
         
 }
+/* For input fields set to Hidden for Sec Booking source and IP */
+.hidden
+{
+    display: none;
+}
 textarea{
     width: 35%;
     height: 45px;

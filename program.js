@@ -31,13 +31,13 @@ $(document).ready(function(){
         function secondaryBooking()
         {
             var selectedValues = $("#bookingSources").val();
-            var ipValues = $("#field_name[]").val();
+            // var ipValues = $("#field_name[]").val();
             var finalV = selectedValues.join(",");
-            var ipV = ipValues.join(",");
+            // var ipV = ipValues.join(",");
             console.log("value of multiples="+finalV);
-            console.log("value of IPs="+ipV);
+            // console.log("value of IPs="+ipV);
             document.getElementById("secSource").value = finalV;
-            document.getElementById("ipAddr").value = ipV;
+            // document.getElementById("ipAddr").value = ipV;
             console.log("ha ha  ha"+document.getElementById("secSource").value);
         }
         
