@@ -33,6 +33,8 @@ function enableFew(){
     if(hCheckbox.checked == true){
         $(".showHertz").prop('disabled', false);
         showFutureDate("hertzLivedate");
+        // $(".showHertz").prop('required',true);
+        
       
     }else{
         $(".showHertz").prop('disabled', true);
@@ -41,6 +43,7 @@ function enableFew(){
     if(dCheckbox.checked == true){
         $(".showDollar").prop('disabled', false);  
         showFutureDate("dollarLivedate");
+        // $(".showDollar").prop('required',true);
        
     }else{
         $(".showDollar").prop('disabled', true);
@@ -49,6 +52,7 @@ function enableFew(){
     if(tCheckbox.checked == true){
         $(".showThrifty").prop('disabled', false);
         showFutureDate("thriftyLivedate");
+        // $(".showThrifty").prop('required',true);
        
     }else{
         $(".showThrifty").prop('disabled', true);
@@ -57,6 +61,7 @@ function enableFew(){
     if(fCheckbox.checked == true){
         $(".showFirefly").prop('disabled', false);
         showFutureDate("fireflyLivedate");
+        // $(".showFirefly").prop('required',true);
        
     }else{
         $(".showFirefly").prop('disabled', true);
@@ -156,77 +161,73 @@ function doNull(id){
     document.getElementById(id).value = null;
     // alert(document.getElementById(id).value);
 }
-
-// function multiVal(){
-    
-//     var bs = document.getElementById('bookingSources');
-//     var values = [];
-//     for (var i = 0; i < bs.options.length; i++) {
-//         if (bs.options[i].selected) {
-//         values.push(bs.options[i].value);
-//         }
-
-//         console.log("here " + values[i].value);
-//         alert("here " + values);
-//     }
-// }
-// -----
 function isChecked(){
 
     if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
         console.log("Select any one");
         alert("Select any one");
-    }else{         
-            if(hCheckbox.checked){        
-                alert("hertz tick");
-                makeReqd("showHertz");
+    }else{       
+        //do nothing
+    }
+
+}
+            // if(hCheckbox.checked){        
+//                 alert("hertz tick");
+//                 makeReqd("showHertz");
                 
-            }else if(dCheckbox.checked){
-                alert("dollar tick");
-                // makeReqd("showDollar");
-            }
-            else if(tCheckbox.checked){
-                alert("thrifty tick");
-                // makeReqd("showThrifty");
+//             }else if(dCheckbox.checked){
+//                 alert("dollar tick");
+//                 // makeReqd("showDollar");
+//             }
+//             else if(tCheckbox.checked){
+//                 alert("thrifty tick");
+//                 // makeReqd("showThrifty");
         
-            }else if(fCheckbox.checked){
-                alert("firefox tick");
-                // makeReqd("showFirefly");
-            }
-            else{
-                console.log("All fine !");
-                alert("All fine!");   
-            }
+//             }else if(fCheckbox.checked){
+//                 alert("firefox tick");
+//                 // makeReqd("showFirefly");
+//             }
+//             else{
+//                 console.log("All fine !");
+//                 alert("All fine!");   
+//             }
 
-    } 
+//     } 
     
-}
+// }
 
-function makeReqd(elementClass){
-    alert("in makeReqd function");
+// function makeReqd(elementClass){
+//     alert("in makeReqd function");
     
-    var x = document.getElementsByClassName(elementClass);
-    alert(x.length);
-    alert("success " + x[2].innerHTML);
+//     var x = document.getElementsByClassName(elementClass);
+//     alert(x.length);
+//     alert("success " + x[0].name);
 
     
-    alert("below");
+//     alert("below");
 
-    // for(i = 0; i < x.length ; i++){
+//     for(i = 0; i < x.length ; i++){
         
-    //     if ( (!x[i].checked) || ( x[i].value == null )){
-    //         console.log("please do" + x[i]);
-    //         alert("Please do" + x[i]);
+//         if ( (!x[i].checked) || ( x[i].value == null || x[i].value =="")){
+//             console.log("please do" + x[i]);
+//             alert("Please do" + x[i]);
 
-    //     // }else if(x[i].value == null){
-    //     //     console.log("please fill the required info" + x[i]);
-    //     //     alert("please fill the required info" + x[i]);
+//         // }else if(x[i].value == null){
+//         //     console.log("please fill the required info" + x[i]);
+//         //     alert("please fill the required info" + x[i]);
 
-    //     }
-    //     else if( (x[i].checked)  || ( !x[i].value == null) ){
-    //         alert("fine " + x[i]);
-    //         console.log("fine " + x[i]);
-    //     }
-    // }
+//         }
+//         else if( (x[i].checked)  || ( !x[i].value == null) ){
+//             alert("fine " + x[i]);
+//             console.log("fine " + x[i]);
+//         }
+//     }
 
-}
+// }
+
+// function isCheckbox(elementClass){
+//     var x = document.getElementsByClassName(elementClass);
+//     if(x.type == "checkbox"){
+//         alert();
+//     }
+// }
