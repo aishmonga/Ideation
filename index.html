@@ -24,7 +24,7 @@
         <div class="exportContent">
                 
             <div class="container" id="mainDiv"> 
-                <form id="myForm"  method="GET"  action="template.html" onsubmit="isChecked(); makeReqd();" > 
+                <form id="myForm"  method="GET"  action="template.html" onsubmit="isChecked();" > 
                         <!-- onsubmit="ifSame()" -->
                         <div class="form-group container">
                             <center>
@@ -41,21 +41,21 @@
                             
                             <br><h2>* Trading Partner Information</h2>
                             <label for="pName"> Trading Partner Name: </label>
-                            <input class="form-control" type="text" name="pName"  id="pName" required>
+                            <input class="form-control" type="text" name="pName"  id="pName" required value="Aish">
                             
                             <br>
                             <label for="pContactName"> Contact Name: </label>
-                            <input class="form-control" type="text" name="pContactName"  id="pContactName" required >
+                            <input class="form-control" type="text" name="pContactName"  id="pContactName" required value="Monga">
                             <br>
                             <label for="pEmail"> Contact E-mail: </label>
-                            <input class="form-control" type="email" name="pEmail"  id="pEmail"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com"  >
+                            <input class="form-control" type="email" name="pEmail"  id="pEmail"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com" value="aish@gmail.com" >
                             <br>
                             <label for="pPhone"> Contact Phone </label>
-                            <input class="form-control" type="number" name="pPhone"  id="pPhone" required  >
+                            <input class="form-control" type="number" name="pPhone"  id="pPhone" required value="9382777289" >
             
                             <br>
                             <br>    
-                            <label><input type="checkbox" onchange="autoFillDevPartner();" name="autoCheckbox" id="autoCheckbox">
+                            <label><input type="checkbox" onchange="autoFillDevPartner();" name="autoCheckbox" id="autoCheckbox"  >
                                 <p id="checkIfSame">( Check this if Trading Partner is same as Development Partner ) &nbsp;</p> </label>
                         
                             <h2>* Development Information</h2>
@@ -79,13 +79,13 @@
                             <h2>* Company Sales Contact  (Hertz, Dollar, or Thrifty Sales Rep)</h2>
                             
                             <label for="cContactName">Contact Name:</label>
-                            <input class="form-control" type="text" name="cContactName"  id="cContactName" required >
+                            <input class="form-control" type="text" name="cContactName"  id="cContactName" required value="Anku">
                             <br>
                             <label for="cEmail">Contact E-mail:</label>
-                            <input class="form-control" type="email" name="cEmail" required id="cEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com" >
+                            <input class="form-control" type="email" name="cEmail" required id="cEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com" value="anku@gmail.com" >
                             <br>
                             <label for="cPhone">Contact Phone :</label>
-                            <input class="form-control" type="number" name="cPhone" required  id="cPhone">
+                            <input class="form-control" type="number" name="cPhone" required  id="cPhone" value="947288482" >
                             <br><br>
 
                             <h2>Outage Notification Contacts/Helpdesk  (if other than above) </h2>
@@ -117,7 +117,7 @@
                             <br>
                             <li class="grey">* Web Site Address (URL) of system being developed:
                                 <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required 
-                                pattern="(https://)(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com" value ="https://" >
+                                pattern="(https://)(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com" value ="https://www.go.com" >
                                 <!-- "[www.]( [a-z0-9\.]+)" -->
                             </li>
                             <!-- todo -->
@@ -125,13 +125,13 @@
                             <div class="disabledBlock">
                                 <li> <p  class="grey"> Estimated Live date: (you can approximate only till the next year) </p> 
                                     <!-- <input id="dateField" type="date" disabled  /> -->
-                                    <label for="hertzLivedate" class="showHertz">Hertz</label>
+                                    <label for="hertzLivedate">Hertz</label>
                                     <input class="showHertz" type="date" name="hertzLivedate"  id="hertzLivedate">
-                                    <label for="dollarLivedate" class="showDollar">Dollar</label>
+                                    <label for="dollarLivedate">Dollar</label>
                                     <input class="showDollar" type="date" name="dollarLivedate"  id="dollarLivedate">
-                                    <label for="thriftyLivedate" class="showThrifty">Thrifty</label>
+                                    <label for="thriftyLivedate">Thrifty</label>
                                     <input class="showThrifty" type="date" name="thriftyLivedate" id="thriftyLivedate">
-                                    <label for="fireflyLivedate" class="showFirefly">Firefly</label>
+                                    <label for="fireflyLivedate">Firefly</label>
                                     <input class="showFirefly" type="date" name="fireflyLivedate" id="fireflyLivedate">                                </li><br>
                             </div>
                             
@@ -141,8 +141,8 @@
                                 list country of incorporation)?</p>
                                 </label><br>
                                 Primary Source <select id="bookingSourcep" name="bookingSourcep" required data-placeholder ="Select a country" >
-                                        <option disabled value="" selected>Select a country</option>
-                                        <option value="Afganistan">Afghanistan</option>
+                                        <!-- <option disabled value="" selected>Select a country</option> -->
+                                        <option value="Afganistan" selected>Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
                                         <option value="American Samoa">American Samoa</option>
@@ -836,16 +836,16 @@
                                     <p class="grey">* What is the expected total daily volume of requests/transactions?</p>
                                     
                                     <div class="disabledBlock">
-                                        <label for="volH" class="showHertz">Hertz</label>
+                                        <label for="volH">Hertz</label>
                                         <input class="form-control showHertz unique" type="number" name="volH" min="1" step="1" id="volH">
                                         
-                                        <label for="volD" class="showDollar">Dollar</label>
+                                        <label for="volD">Dollar</label>
                                         <input class="form-control showDollar unique" type="number" name="volD" min="1" step="1" id="volD">
                                         
-                                        <label for="volF" class="showFirefly">Firefly</label>
+                                        <label for="volF">Firefly</label>
                                         <input class="form-control showFirefly unique" type="number" name="volF" min="1" step="1" id="volF">
                                         
-                                        <label for="volT" class="showThrifty">Thrifty</label>
+                                        <label for="volT">Thrifty</label>
                                         <input class="form-control showThrifty unique" type="number" name="volT" min="1" step="1" id="volT">
         
                                     </div>
@@ -906,7 +906,7 @@
                                         * List the IP address(s) to be used :
                                     </label>
                                     <input class="form-control unique" type="text" name= "ip"
-                                   id="ip" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required>
+                                   id="ip" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" >
 
                                 </li><br>
                                                              
