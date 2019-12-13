@@ -114,12 +114,7 @@
                     <p style = " font-family: Arial, Helvetica, sans-serif; line-height: 25px;">
                     <b>What are the booking source market(s) (List primary market. If unknown, list country of incorporation)? </b>
                     <br>Primary: <script> document.write(getVal('bookingSourcep')) </script> &nbsp;
-                    Secondary:
-                    <script>
-                        // if()
-                        // document.write(urlParams.get('bookingSources'))         
-                    </script></p>
-                        
+                    Secondary: <script> document.write(getVal('bookingSources')) </script></p>                       
                                         
                     <p style = " font-family: Arial, Helvetica, sans-serif; line-height: 25px;">
                     <b>List rate/booking method(s) replaced by the XML development?</b>
@@ -210,7 +205,7 @@
                     <b>List the IATA number(s) to be used :</b><br><script> document.write(getVal('iata'))</script> </p>
                                         
                     <p style = " font-family: 'Times New Roman', Times, serif;">
-                    <b>List the IP address (s) to be used :</b><br><script> document.write(getVal('ip'))</script> </p>
+                    <b>List the IP address (s) to be used :</b><br><script> document.write(getVal('field_name[]'))</script> </p>
                         
                 
                 

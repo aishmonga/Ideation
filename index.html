@@ -123,7 +123,7 @@
                             <!-- todo -->
                             <br>
                             <div class="disabledBlock">
-                                <li> <p  class="grey"> Estimated Live date: (you can approximate only till the next year) </p> 
+                                <li> <p  class="grey"> * Estimated Live date: (you can approximate only till the next year) </p> 
                                     <!-- <input id="dateField" type="date" disabled  /> -->
                                     <label for="hertzLivedate">Hertz</label>
                                     <input class="showHertz" type="date" name="hertzLivedate"  id="hertzLivedate">
@@ -642,7 +642,7 @@
                                 </select> 
                                 <!-- <input class="form-control" type="text" name="bookingSource" id="bookingSource"> -->
                             </li><br>
-                
+                            <input type="text" class="hidden" id="secSource" name="secSource" value=""> 
                             <li><p  class="grey">* List rate/booking method(s) replaced by the XML development?</p> 
                             <br>
                                 <div class="checkbox">
@@ -909,12 +909,24 @@
                                     <label for="ip">
                                         * List the IP address(s) to be used :
                                     </label>
-                                    <input class="form-control unique" type="text" name= "ip"
-                                   id="ip" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" >
+                            <!-- For multiple IP adddresses fields adding dynamically  -->
+                                    <div class="field_wrapper">
+                                        <div id="ipaddress">
+                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4">
+                                            <a href="javascript:void(0);" class="add_button" title="Add field">
+                                                <img src="add-icon.png" width="20px" height="20px"/></a>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- commenting the earlier IP field for now -->
+                                    <!-- <input class="form-control unique" type="text" name= "ip"
+                                   id="ip" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required> -->
 
                                 </li><br>
-                                                             
-                                <input class="form-control sbt" type="submit" id="subBtn" value="Submit" >                                
+                                         <!-- submitting all the IP values in this field -->
+                                   <input type="text" class="hidden" id="ipAddr" name="ipAddr" value=""> 
+
+                                <input class="form-control sbt" type="submit" id="subBtn" value="Submit" onclick="secondaryBooking();">                                
                         </div>
                     </form>
             </div>

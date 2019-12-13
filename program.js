@@ -2,7 +2,48 @@ $(document).ready(function(){
             $('#bookingSources').chosen();
         });
 
+// For adding IP address field for multiple values
+        $(document).ready(function(){
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div><input type="text" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\.){3}(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])$" required><a href="javascript:void(0);" class="add_button" title="Add field"></a></div>';
+            var x = 1; //Initial field counter is 1
+            
+            //Once add button is clicked
+            $(addButton).click(function(){
+                //Check maximum number of input fields
+                if(x < maxField){ 
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
+                }
+            });
+            
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+
+    // For multiple secondary sources
+        function secondaryBooking()
+        {
+            var selectedValues = $("#bookingSources").val();
+            // var ipValues = $("#field_name[]").val();
+            var finalV = selectedValues.join(",");
+            // var ipV = ipValues.join(",");
+            console.log("value of multiples="+finalV);
+            // console.log("value of IPs="+ipV);
+            document.getElementById("secSource").value = finalV;
+            // document.getElementById("ipAddr").value = ipV;
+            console.log("ha ha  ha"+document.getElementById("secSource").value);
+        }
+        
 var queryString = location.search;
+//Query string printing for reference in console
+console.log("Query string value in another page"+queryString);
 var urlParams = new URLSearchParams(queryString);
 
 function autoFillDevPartner(){
@@ -152,10 +193,13 @@ function getVal(key){
         return "&#x1F5F9";
     }else if( value ==""){
         return "&#x2718";
-    }else{
-        return value;
     }
-}
+    else if(key=='bookingSources' && value != "")  //For printing secondary booking source values in template.html
+    {   
+        return(urlParams.get("secSource"));   
+    }
+    else return value;
+    }
 
 function doNull(id){
     document.getElementById(id).value = null;
