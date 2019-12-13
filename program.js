@@ -172,61 +172,61 @@ function doNull(id){
 // }
 
 // ------
-function isChecked(){
+// function isChecked(){
 
-    if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
-        console.log("need to select");
-        alert("need to select");
-    }else{         
-            if(hCheckbox.checked){        
-                makeReqd("showHertz");
-                alert("hertz tick");
+//     if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
+//         console.log("need to select");
+//         alert("need to select");
+//     }else{         
+//             if(hCheckbox.checked){        
+//                 makeReqd("showHertz");
+//                 alert("hertz tick");
                 
-            }else if(dCheckbox.checked){
-                alert("dollar tick");
-                makeReqd("showDollar");
-            }
-            else if(tCheckbox.checked){
-                alert("thrifty tick");
-                makeReqd("showThrifty");
+//             }else if(dCheckbox.checked){
+//                 alert("dollar tick");
+//                 makeReqd("showDollar");
+//             }
+//             else if(tCheckbox.checked){
+//                 alert("thrifty tick");
+//                 makeReqd("showThrifty");
         
-            }else if(fCheckbox.checked){
-                alert("firefox tick");
-                makeReqd("showFirefly");
-            }
-            // else{
-            //     console.log("All fine !");
-            //     alert("All fine!");   
-            // }
+//             }else if(fCheckbox.checked){
+//                 alert("firefox tick");
+//                 makeReqd("showFirefly");
+//             }
+//             // else{
+//             //     console.log("All fine !");
+//             //     alert("All fine!");   
+//             // }
 
-    } 
+//     } 
     
-}
+// }
 
-function makeReqd(elementClass){
-    alert("in makeReqd function");
+// function makeReqd(elementClass){
+//     alert("in makeReqd function");
     
-    var x = document.getElementsByClassName(elementClass);
+//     var x = document.getElementsByClassName(elementClass);
 
-    alert("success " + x[0].value);
+//     alert("success " + x[0].value);
     
-    alert("below");
+//     alert("below");
 
-    // for(i = 0; i < x.length ; i++){
+//     // for(i = 0; i < x.length ; i++){
         
-    //     if ( (!x[i].checked) || ( x[i].value == null )){
-    //         console.log("please do" + x[i]);
-    //         alert("Please do" + x[i]);
+//     //     if ( (!x[i].checked) || ( x[i].value == null )){
+//     //         console.log("please do" + x[i]);
+//     //         alert("Please do" + x[i]);
 
-    //     // }else if(x[i].value == null){
-    //     //     console.log("please fill the required info" + x[i]);
-    //     //     alert("please fill the required info" + x[i]);
+//     //     // }else if(x[i].value == null){
+//     //     //     console.log("please fill the required info" + x[i]);
+//     //     //     alert("please fill the required info" + x[i]);
 
-    //     }
-    //     else if( (x[i].checked)  || ( !x[i].value == null) ){
-    //         alert("fine " + x[i]);
-    //         console.log("fine " + x[i]);
-    //     }
-    // }
+//     //     }
+//     //     else if( (x[i].checked)  || ( !x[i].value == null) ){
+//     //         alert("fine " + x[i]);
+//     //         console.log("fine " + x[i]);
+//     //     }
+//     // }
 
-}
+// }
