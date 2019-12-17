@@ -74,6 +74,7 @@ function enableFew(){
     if(hCheckbox.checked == true){
         $(".showHertz").prop('disabled', false);
         showFutureDate("hertzLivedate");
+        makeReqd("showHertz");
         // $(".showHertz").prop('required',true);
         
       
@@ -84,6 +85,7 @@ function enableFew(){
     if(dCheckbox.checked == true){
         $(".showDollar").prop('disabled', false);  
         showFutureDate("dollarLivedate");
+        makeReqd("showDollar");
         // $(".showDollar").prop('required',true);
        
     }else{
@@ -93,6 +95,7 @@ function enableFew(){
     if(tCheckbox.checked == true){
         $(".showThrifty").prop('disabled', false);
         showFutureDate("thriftyLivedate");
+        makeReqd("showThrifty");
         // $(".showThrifty").prop('required',true);
        
     }else{
@@ -102,6 +105,7 @@ function enableFew(){
     if(fCheckbox.checked == true){
         $(".showFirefly").prop('disabled', false);
         showFutureDate("fireflyLivedate");
+        makeReqd("showFirefly");
         // $(".showFirefly").prop('required',true);
        
     }else{
@@ -215,7 +219,47 @@ function isChecked(){
     }
 
 }
-            // if(hCheckbox.checked){        
+     
+function makeReqd(elementClass){
+var x = document.getElementsByClassName(elementClass);
+var count = 0;
+    for(i = 0; i< x.length; i++){
+        if(x[i].type == "checkbox"){
+            alert("checkbox...");
+
+            // $( "." + elementClass).removeAttr('required');  
+            alert("not all rqd");
+
+            if(x[i].checked){
+                count++;
+                // return true;
+            }
+
+        }else if( (x[i].type == "date" ) | (x[i].type == "number" ) ){
+            alert("date/num...");
+
+            // $( "." + elementClass).prop('required',true);
+            alert("made rqd");
+            
+        }
+    }   
+
+    return count;
+    // return false;
+}
+
+function ifChecked(){
+    if(!makeReqd(classOfElement)){
+        alert("select one");
+        // return false;
+    }else{
+        alert("okay");
+        // return true;
+    }
+}
+
+
+// if(hCheckbox.checked){        
 //                 alert("hertz tick");
 //                 makeReqd("showHertz");
                 
