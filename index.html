@@ -11,38 +11,38 @@
         <link rel="stylesheet" href="myStyle.css">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
-        </script>  
+        </script>
 <!-- For Secondary Source -->
-<link rel="stylesheet" href="chosen.min.css"> 
-<script type="text/javascript" src = "jquery-3.4.1.min.js"></script> 
+<link rel="stylesheet" href="chosen.min.css">
+<script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src = "chosen.jquery.min.js"></script>
     </head>
     <body onload="todayDate(); disableAll(); showFutureDate();">
 <script src = "program.js"></script>
- 
+
     <!-- <div class="googoose"> -->
         <div class="exportContent">
-                
-            <div class="container" id="mainDiv"> 
-                <form id="myForm"  method="GET"  action="template.html" onsubmit="isChecked(); ifChecked();" > 
+
+            <div class="container" id="mainDiv">
+                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit()" > 
                         <!-- onsubmit="ifSame()" -->
                         <div class="form-group container">
                             <center>
                                 <img src="./pics/logo.png" alt="hertz logo" width="90%" height="20%">
-                            </center>              
-                            <b> 
+                            </center>
+                            <b>
                                 <p id="appendix">Appendix B - XML Development Request for Access.</p>
-                                <p id="star"> (Please fill * (asterisk) marked fields are mandatory) </p> 
+                                <p id="star"> (Please fill * (asterisk) marked fields are mandatory) </p>
                             </b>
-                            <div id="dateToRight"> 
-                                <label for="tDate" > Today's Date : </label> 
-                                <input  id="tDate" name="tDate" readonly > 
+                            <div id="dateToRight">
+                                <label for="tDate" > Today's Date : </label>
+                                <input  id="tDate" name="tDate" readonly >
                             </div>
-                            
+
                             <br><h2>* Trading Partner Information</h2>
                             <label for="pName"> Trading Partner Name: </label>
                             <input class="form-control" type="text" name="pName"  id="pName" required value="Aish">
-                            
+
                             <br>
                             <label for="pContactName"> Contact Name: </label>
                             <input class="form-control" type="text" name="pContactName"  id="pContactName" required value="Monga">
@@ -52,14 +52,14 @@
                             <br>
                             <label for="pPhone"> Contact Phone </label>
                             <input class="form-control" type="number" name="pPhone"  id="pPhone" required value="9382777289" >
-            
+
                             <br>
-                            <br>    
+                            <br>
                             <label><input type="checkbox" onchange="autoFillDevPartner();" name="autoCheckbox" id="autoCheckbox"  >
                                 <p id="checkIfSame">( Check this if Trading Partner is same as Development Partner ) &nbsp;</p> </label>
-                        
+
                             <h2>* Development Information</h2>
-                            
+
                             <div id="filledDisabled">
                                 <label for="dCompany"> Development Company: </label>
                                 <input class="form-control" type="text" name="dCompany"  id="dCompany" required >
@@ -75,9 +75,9 @@
                                 <input class="form-control" type="number" name="dPhone" required id="dPhone" >
                             </div>
                             <br>
-            
+
                             <h2>* Company Sales Contact  (Hertz, Dollar, or Thrifty Sales Rep)</h2>
-                            
+
                             <label for="cContactName">Contact Name:</label>
                             <input class="form-control" type="text" name="cContactName"  id="cContactName" required value="Anku">
                             <br>
@@ -92,10 +92,10 @@
                             <label for="helpContactName">Contact Name:</label>
                             <input class="form-control" type="text" name="helpContactName" id="helpContactName">
                             <br><label for="helpEmail">Contact E-mail:</label>
-                            <input class="form-control" type="email" name="helpEmail" id="helpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com"> 
+                            <input class="form-control" type="email" name="helpEmail" id="helpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com">
                             <br><br>
 
-                            <h2>* For which brands do you have a commercial agreement? (Please check all that apply)</h2> 
+                            <h2>* For which brands do you have a commercial agreement? (Please check all that apply)</h2>
                             <div class="checkbox">
                                 <label><input type="checkbox" name="hCheckbox"
                                 id="hCheckbox" onchange="enableFew();">  Hertz </label> <br>
@@ -116,14 +116,14 @@
                             <h2>The following information is  prior to providing production access.</h2>
                             <br>
                             <li class="grey">* Web Site Address (URL) of system being developed:
-                                <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required 
+                                <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required
                                 pattern="(https://)(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com" value ="https://www.go.com" >
                                 <!-- "[www.]( [a-z0-9\.]+)" -->
                             </li>
                             <!-- todo -->
                             <br>
                             <div class="disabledBlock">
-                                <li> <p  class="grey"> * Estimated Live date: (you can approximate only till the next year) </p> 
+                                <li> <p  class="grey"> * Estimated Live date: (you can approximate only till the next year) </p>
                                     <!-- <input id="dateField" type="date" disabled  /> -->
                                     <label for="hertzLivedate">Hertz</label>
                                     <input class="showHertz" type="date" name="hertzLivedate"  id="hertzLivedate">
@@ -134,10 +134,10 @@
                                     <label for="fireflyLivedate">Firefly</label>
                                     <input class="showFirefly" type="date" name="fireflyLivedate" id="fireflyLivedate">                                </li><br>
                             </div>
-                            
-            
+
+
                             <li>
-                                <label for="bookingSource"> <p  class="grey">* What are the booking source market(s) (List primary market. If unknown, 
+                                <label for="bookingSource"> <p  class="grey">* What are the booking source market(s) (List primary market. If unknown,
                                 list country of incorporation)?</p>
                                 </label><br>
                                 Primary Source <select id="bookingSourcep" name="bookingSourcep" required data-placeholder ="Select a country" >
@@ -389,10 +389,10 @@
                                         <option value="Zambia">Zambia</option>
                                         <option value="Zimbabwe">Zimbabwe</option>
                                 </select> &nbsp;
-                             
-                                    
+
+
                                 Secondary Source <select id="bookingSources" name="bookingSources" multiple="multiple" data-placeholder ="Select other country">
-                                        
+
                                         <option value="Afganistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
@@ -639,11 +639,11 @@
                                         <option value="Zaire">Zaire</option>
                                         <option value="Zambia">Zambia</option>
                                         <option value="Zimbabwe">Zimbabwe</option>
-                                </select> 
+                                </select>
                                 <!-- <input class="form-control" type="text" name="bookingSource" id="bookingSource"> -->
                             </li><br>
-                            <input type="text" class="hidden" id="secSource" name="secSource" value=""> 
-                            <li><p  class="grey">* List rate/booking method(s) replaced by the XML development?</p> 
+                            <input type="text" class="hidden" id="secSource" name="secSource" value="">
+                            <li><p  class="grey">* List rate/booking method(s) replaced by the XML development?</p>
                             <br>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="methodNone" id="methodNone"> None (New Partner/New Business)
@@ -677,17 +677,17 @@
                                     <label><input type="checkbox" name="methodHttps" id="methodHttps" > HTTPS<br>
                                     </label>
                                 </div>
-                                
+
                             </li><br>
-            
+
                             <li>
                                 <p class="grey">
                                 * Which functionality will be developed (please check all that apply)?<br>
                                 Hertz</p>
-                                
-                                <div class="disabledBlock">                          
+
+                                <div class="disabledBlock">
                                     <div class="checkbox">
-                                        <label><input type="checkbox" class="showHertz" name="developRateH" id="developRateH" > Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>  
+                                        <label><input type="checkbox" class="showHertz" name="developRateH" id="developRateH" > Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>
                                         </label>
                                     </div>
                                     <div class="checkbox">
@@ -707,7 +707,7 @@
                                         </label>
                                     </div>
                                     <div class="checkbox ">
-                                        <label><input type="checkbox" class="showHertz" name="developLocationH" id="developLocationH" > Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br> 
+                                        <label><input type="checkbox" class="showHertz" name="developLocationH" id="developLocationH" > Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br>
                                         </label>
                                     </div>
                                     <div class="checkbox ">
@@ -735,7 +735,7 @@
                                         <label><input type="checkbox" class="showDollar" name="developRateD" id="developRateD"> Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>
                                         </label>
                                     </div>
-                                    <div class="checkbox">                                        
+                                    <div class="checkbox">
                                         <label><input type="checkbox" class="showDollar" name="developBookD" id="developBookD"> Book - (OTA_VehResRQ/RS)<br>
                                         </label>
                                     </div>
@@ -752,7 +752,7 @@
                                         </label>
                                     </div>
                                     <div class="checkbox ">
-                                        <label><input type="checkbox" class="showDollar" name="developLocationD" id="developLocationD"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br> 
+                                        <label><input type="checkbox" class="showDollar" name="developLocationD" id="developLocationD"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br>
                                         </label>
                                     </div>
                                     <!-- <div class="checkbox ">
@@ -760,16 +760,16 @@
                                         </label>
                                     </div> -->
                                     <div class="checkbox ">
-                                        <label><input type="checkbox" class="showDollar" name="developTourD" id="developTourD"> Tour Rates - (IT Code with contracted rates)<br> 
+                                        <label><input type="checkbox" class="showDollar" name="developTourD" id="developTourD"> Tour Rates - (IT Code with contracted rates)<br>
                                         </label>
                                     </div>
-                        
+
                                 </div><br>
-                            
+
                                 <p class="grey"> Thrifty</p>
                                 <div class="disabledBlock">
                                     <div class="checkbox">
-                                        <label><input type="checkbox" class="showThrifty" name="developRateT" id="developRateT"> Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>  
+                                        <label><input type="checkbox" class="showThrifty" name="developRateT" id="developRateT"> Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>
                                         </label>
                                     </div>
                                     <div class="checkbox ">
@@ -789,7 +789,7 @@
                                         </label>
                                     </div>
                                     <div class="checkbox ">
-                                        <label><input type="checkbox" class="showThrifty" name="developLocationT" id="developLocationT"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br> 
+                                        <label><input type="checkbox" class="showThrifty" name="developLocationT" id="developLocationT"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br>
                                         </label>
                                     </div>
                                     <!-- <div class="checkbox ">
@@ -800,11 +800,11 @@
                                     </div>
                                 </div>
                                 <br>
-                            
+
                                 <p class="grey">Firefly</p>
                                 <div class="disabledBlock">
                                     <div class="checkbox">
-                                        <label><input type="checkbox" class="showFirefly" name="developRateF" id="developRateF"> Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>  
+                                        <label><input type="checkbox" class="showFirefly" name="developRateF" id="developRateF"> Rate/Shop- (OTA_VehAvailRateRQ/RS)<br>
                                         </label>
                                     </div>
                                     <div class="checkbox ">
@@ -824,7 +824,7 @@
                                         </label>
                                     </div>
                                     <div class="checkbox ">
-                                        <label><input type="checkbox" class="showFirefly" name="developLocationF" id="developLocationF"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br> 
+                                        <label><input type="checkbox" class="showFirefly" name="developLocationF" id="developLocationF"> Specific Location Detail - (OTA_VehLocDetailRQ/RS)<br>
                                         </label>
                                     </div>
                                     <!-- <div class="checkbox ">
@@ -834,36 +834,36 @@
                                         <label><input type="checkbox" class="showFirefly" name="developTourF" id="developTourF"> Tour Rates - (IT Code with contracted rates)<br> </label>
                                     </div>
                                 </div>
-                                
+
 
                                 <li><br>
                                     <p class="grey">* What is the expected total daily volume of requests/transactions?</p>
-                                    
+
                                     <div class="disabledBlock">
                                         <label for="volH">Hertz</label>
                                         <input class="form-control showHertz unique" type="number" name="volH" min="1" step="1" id="volH">
-                                        
+
                                         <label for="volD">Dollar</label>
                                         <input class="form-control showDollar unique" type="number" name="volD" min="1" step="1" id="volD">
-                                        
+
                                         <label for="volF">Firefly</label>
                                         <input class="form-control showFirefly unique" type="number" name="volF" min="1" step="1" id="volF">
-                                        
+
                                         <label for="volT">Thrifty</label>
                                         <input class="form-control showThrifty unique" type="number" name="volT" min="1" step="1" id="volT">
-        
+
                                     </div>
                             </li><br>
                                 <li>
                                     <label for="expTime">  <p class="grey">
-                                        What is the expected time range for peak requests/transactions? What is the expected 
+                                        What is the expected time range for peak requests/transactions? What is the expected
                                         transaction volume during peak usage? (List peak hours during the day and time zone)?</p>
                                     </label>
                                     <!-- <input id="dateField" type="date" disabled  /> -->
                                     <input class="form-control unique" type="text" name="expTime" id="expTime">
                                 </li><br>
                                 <li class="grey">
-                                    
+
                                     <label for="numVehicles">
                                     * How many vehicles will you display on your site (maximum 5 vehicles)?
                                     </label><br>
@@ -877,12 +877,12 @@
                                     <!-- <input class="form-control" type="text" name="numVehicles" id="numVehicles"> -->
                                 </li><br>
                                 <li class="grey">
-                                        
+
                                     <label for="timeout">
-                                        List internal timeout value for both rate requests and booking requests. 
+                                        List internal timeout value for both rate requests and booking requests.
                                         How long will your system wait for the response? (in seconds)
                                     </label>
-                                    <input class="form-control unique" type="text" name="timeout" id="timeout" > 
+                                    <input class="form-control unique" type="text" name="timeout" id="timeout" >
                                 </li><br>
                                 <li class="grey">
                                     <label for="contactInfo">
@@ -891,21 +891,21 @@
                                     <input class="form-control unique" type="text" name="contactInfo" id="cotactInfo">
                                 </li><br>
                                 <li class="grey">
-                                    
+
                                     <label for="libEmail">
                                         List email address for system access to the Hertz Digital Asset Library (http://Hertz.Worktribe.com)?
                                     </label>
                                     <input class="form-control unique" type="email" name="libEmail" id="libEmail">
                                 </li><br>
                                 <li class="grey">
-                                    
+
                                     <label for="iata">
-                                        List the IATA number(s) to be used : 
+                                        List the IATA number(s) to be used :
                                     </label>
                                     <input class="form-control unique" type="number" name="iata" id="iata">
                                 </li><br>
                                 <li class="grey">
-                                    
+
                                     <label for="ip">
                                         * List the IP address(s) to be used :
                                     </label>
@@ -916,7 +916,7 @@
                                             <a href="javascript:void(0);" class="add_button" title="Add field">
                                                 <img src="add-icon.png" width="20px" height="20px"/></a>
                                         </div>
-                                        
+
                                     </div>
                                     <!-- commenting the earlier IP field for now -->
                                     <!-- <input class="form-control unique" type="text" name= "ip"
@@ -924,13 +924,13 @@
 
                                 </li><br>
                                          <!-- submitting all the IP values in this field -->
-                                   <input type="text" class="hidden" id="ipAddr" name="ipAddr" value=""> 
+                                   <input type="text" class="hidden" id="ipAddr" name="ipAddr" value="">
 
-                                <input class="form-control sbt" type="submit" id="subBtn" value="Submit" onclick="secondaryBooking();">                                
+                                <input class="form-control sbt" type="submit" id="subBtn" value="Submit" onclick="secondaryBooking();">
                         </div>
                     </form>
             </div>
-        </div>    
-        
+        </div>
+
     </body>
 </html>

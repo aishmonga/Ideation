@@ -9,16 +9,16 @@ $(document).ready(function(){
             var wrapper = $('.field_wrapper'); //Input field wrapper
             var fieldHTML = '<div><input type="text" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\.){3}(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])$" required><a href="javascript:void(0);" class="add_button" title="Add field"></a></div>';
             var x = 1; //Initial field counter is 1
-            
+
             //Once add button is clicked
             $(addButton).click(function(){
                 //Check maximum number of input fields
-                if(x < maxField){ 
+                if(x < maxField){
                     x++; //Increment field counter
                     $(wrapper).append(fieldHTML); //Add field html
                 }
             });
-            
+
             //Once remove button is clicked
             $(wrapper).on('click', '.remove_button', function(e){
                 e.preventDefault();
@@ -40,7 +40,7 @@ $(document).ready(function(){
             // document.getElementById("ipAddr").value = ipV;
             console.log("ha ha  ha"+document.getElementById("secSource").value);
         }
-        
+
 var queryString = location.search;
 //Query string printing for reference in console
 console.log("Query string value in another page"+queryString);
@@ -50,10 +50,10 @@ function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
         // $("#filledDisabled *").prop("disabled" ,false);
         $("#filledDisabled *").attr("disabled", false).on('click');
-        dCompany.value      = document.getElementById("dCompany").value       
-        dContactName.value  = document.getElementById("dContactName").value   
-        dEmail.value        = document.getElementById("dEmail").value         
-        dPhone.value        = document.getElementById("dPhone").value         
+        dCompany.value      = document.getElementById("dCompany").value
+        dContactName.value  = document.getElementById("dContactName").value
+        dEmail.value        = document.getElementById("dEmail").value
+        dPhone.value        = document.getElementById("dPhone").value
 
     }else if(autoCheckbox.checked == true){
             document.getElementById("dCompany").value = pName.value;
@@ -62,7 +62,7 @@ function autoFillDevPartner(){
             document.getElementById("dPhone").value = pPhone.value;
             $("#filledDisabled *").attr("disabled", "disabled").off('click');
             // alert("pname: " + pName.value);
-    } 
+    }
 
 }
 
@@ -76,18 +76,18 @@ function enableFew(){
         showFutureDate("hertzLivedate");
         makeReqd("showHertz");
         // $(".showHertz").prop('required',true);
-        
-      
+
+
     }else{
         $(".showHertz").prop('disabled', true);
         doNull("hertzLivedate")
     }
     if(dCheckbox.checked == true){
-        $(".showDollar").prop('disabled', false);  
+        $(".showDollar").prop('disabled', false);
         showFutureDate("dollarLivedate");
         makeReqd("showDollar");
         // $(".showDollar").prop('required',true);
-       
+
     }else{
         $(".showDollar").prop('disabled', true);
         doNull("dollarLivedate")
@@ -97,7 +97,7 @@ function enableFew(){
         showFutureDate("thriftyLivedate");
         makeReqd("showThrifty");
         // $(".showThrifty").prop('required',true);
-       
+
     }else{
         $(".showThrifty").prop('disabled', true);
         doNull("thriftyLivedate")
@@ -107,14 +107,14 @@ function enableFew(){
         showFutureDate("fireflyLivedate");
         makeReqd("showFirefly");
         // $(".showFirefly").prop('required',true);
-       
+
     }else{
         $(".showFirefly").prop('disabled', true);
         doNull("fireflyLivedate")
     }
 };
 
-function todayDate(){ 
+function todayDate(){
     var today = new Date();
     var date = document.getElementById('tDate');
 
@@ -126,7 +126,7 @@ function todayDate(){
     var tDate = today.getDate();
     date.value = tDate + " " + monthNames[tMonth] + " " + tYear;
 
-};      
+};
 
 function showFutureDate(elementID){
 
@@ -134,12 +134,12 @@ function showFutureDate(elementID){
 
     var t = new Date();
     var today = t.toISOString().split('T')[0];
-   
+
     var year = t.getFullYear();
     var month = t.getMonth();
     var day = t.getDay();
     var oneYearFromNow = new Date(year + 1, month, day).toISOString().split('T')[0];
-    
+
     document.getElementsByName(id)[0].setAttribute('min', today);
     document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
     // alert(oneYearFromNow);
@@ -155,7 +155,7 @@ function toDoc(element,filename = ''){
 
     css = (
     '<style>' +
-        
+
     'mso-ansi-font-weight: {bolder} ' +
 
     '</style>'
@@ -179,9 +179,9 @@ function toDoc(element,filename = ''){
         navigator.msSaveOrOpenBlob(blob, filename);
     }else{
         downloadLink.href = url;
-        
+
         downloadLink.download = filename;
-        
+
         downloadLink.click();
     }
 
@@ -199,8 +199,8 @@ function getVal(key){
         return "&#x2718";
     }
     else if(key=='bookingSources' && value != "")  //For printing secondary booking source values in template.html
-    {   
-        return(urlParams.get("secSource"));   
+    {
+        return(urlParams.get("secSource"));
     }
     else return value;
     }
@@ -209,113 +209,62 @@ function doNull(id){
     document.getElementById(id).value = null;
     // alert(document.getElementById(id).value);
 }
-function isChecked(){
+function checkBrand(){
 
     if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
         console.log("Select any one");
         alert("Select any one");
-    }else{       
-        //do nothing
+        return false;
+    }else{
+        return true;
     }
 
 }
-     
+
 function makeReqd(elementClass){
 var x = document.getElementsByClassName(elementClass);
-var count = 0;
+
     for(i = 0; i< x.length; i++){
-        if(x[i].type == "checkbox"){
-            alert("checkbox...");
+    if( (x[i].type == "date" ) || (x[i].type == "number" ) ){
+            // alert("date/num...");
+            x[i].setAttribute("required" , true)
+            // alert("made rqd");
 
-            // $( "." + elementClass).removeAttr('required');  
-            alert("not all rqd");
-
-            if(x[i].checked){
-                count++;
-                // return true;
-            }
-
-        }else if( (x[i].type == "date" ) | (x[i].type == "number" ) ){
-            alert("date/num...");
-
-            // $( "." + elementClass).prop('required',true);
-            alert("made rqd");
-            
         }
-    }   
-
-    return count;
-    // return false;
-}
-
-function ifChecked(){
-    if(!makeReqd(classOfElement)){
-        alert("select one");
-        // return false;
-    }else{
-        alert("okay");
-        // return true;
     }
+
 }
 
+function checkCount(elementID, elementClass){
+  var checkboxElement = document.getElementById(elementID);
+  if (checkboxElement.checked){
+    var classElements = document.getElementsByClassName(elementClass);
+    var count = 0;
+    for(i=0; i<classElements.length; i++){
+      if(classElements[i].type == "checkbox"){
+        if(classElements[i].checked){
+          count++;
+        }
+      }
+    }
 
-// if(hCheckbox.checked){        
-//                 alert("hertz tick");
-//                 makeReqd("showHertz");
-                
-//             }else if(dCheckbox.checked){
-//                 alert("dollar tick");
-//                 // makeReqd("showDollar");
-//             }
-//             else if(tCheckbox.checked){
-//                 alert("thrifty tick");
-//                 // makeReqd("showThrifty");
-        
-//             }else if(fCheckbox.checked){
-//                 alert("firefox tick");
-//                 // makeReqd("showFirefly");
-//             }
-//             else{
-//                 console.log("All fine !");
-//                 alert("All fine!");   
-//             }
+    if(count<1){
 
-//     } 
-    
-// }
+      alert("please select any one related checkbox ");
+      return false;
+    }
+  }
+  return true;
+}
 
-// function makeReqd(elementClass){
-//     alert("in makeReqd function");
-    
-//     var x = document.getElementsByClassName(elementClass);
-//     alert(x.length);
-//     alert("success " + x[0].name);
+function validateRequiredFields(){
+  var hertz = checkCount("hCheckbox", "showHertz");
+  var dollar = checkCount("dCheckbox", "showDollar");
+  var thrifty = checkCount("tCheckbox", "showThrifty")
+  var firefly = checkCount("fCheckbox", "showFirefly");
+  return hertz && dollar && thrifty && firefly;
+}
 
-    
-//     alert("below");
-
-//     for(i = 0; i < x.length ; i++){
-        
-//         if ( (!x[i].checked) || ( x[i].value == null || x[i].value =="")){
-//             console.log("please do" + x[i]);
-//             alert("Please do" + x[i]);
-
-//         // }else if(x[i].value == null){
-//         //     console.log("please fill the required info" + x[i]);
-//         //     alert("please fill the required info" + x[i]);
-
-//         }
-//         else if( (x[i].checked)  || ( !x[i].value == null) ){
-//             alert("fine " + x[i]);
-//             console.log("fine " + x[i]);
-//         }
-//     }
-
-// }
-
-// function isCheckbox(elementClass){
-//     var x = document.getElementsByClassName(elementClass);
-//     if(x.type == "checkbox"){
-//         alert();
-//     }
-// }
+function callOnSubmit(){
+  return  checkBrand() && validateRequiredFields();
+}
