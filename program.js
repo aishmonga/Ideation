@@ -212,8 +212,8 @@ function doNull(id){
 function checkBrand(){
 
     if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
-        console.log("Select any one");
-        alert("Select any one");
+        console.log("Please select any brand");
+        alert("Please select any brand");
         return false;
     }else{
         return true;
@@ -250,7 +250,7 @@ function checkCount(elementID, elementClass){
 
     if(count<1){
 
-      alert("please select any one related checkbox ");
+      alert("Please select functionality related to the corresponding brand");
       return false;
     }
   }
