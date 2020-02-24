@@ -268,3 +268,9 @@ function validateRequiredFields(){
 function callOnSubmit(){
   return  checkBrand() && validateRequiredFields();
 }
+
+// function addIp(){
+    
+//     document.getElementById("pre").innerHTML = document.getElementById("ip").value;
+//     // doNull("ip");
+// }

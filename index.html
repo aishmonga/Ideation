@@ -909,19 +909,25 @@
                                     <label for="ip">
                                         * List the IP address(s) to be used :
                                     </label>
-                            <!-- For multiple IP adddresses fields adding dynamically  -->
+                                    <!-- <input class="form-control unique" type="number" name="field_name[]" id="field_name[]" minlength="7" maxlength="15" size="15"  pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" > -->
+<!--                                     
+<pre id="pre"> 
+{  }
+</pre>
+                                    <button type="button" onclick="addIp()"  class="btn btn3d btn-info btn-lg" >Click to add IPs </button>
+                                   
+                                    -->
+                                   
+                                    <!-- For multiple IP adddresses fields adding dynamically  -->
                                     <div class="field_wrapper">
                                         <div id="ipaddress">
                                             <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4">
-                                            <a href="javascript:void(0);" class="add_button" title="Add field">
-                                                <img src="add-icon.png" width="20px" height="20px"/></a>
+                                            <!-- <a href="javascript:void(0);" class="add_button" title="Add field">
+                                                <img src="add-icon.png" width="20px" height="20px"/></a> -->
                                         </div>
 
                                     </div>
-                                    <!-- commenting the earlier IP field for now -->
-                                    <!-- <input class="form-control unique" type="text" name= "ip"
-                                   id="ip" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required> -->
-
+                                   
                                 </li><br>
                                          <!-- submitting all the IP values in this field -->
                                    <input type="text" class="hidden" id="ipAddr" name="ipAddr" value="">

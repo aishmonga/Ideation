@@ -120,3 +120,14 @@ input[id="tDate"]{
 li{
     list-style: none;
 }
+#ip{
+    display: inline-block;
+    /* margin-right:10px; */
+}
+pre {
+    text-align: center;
+}
+
+/* button{
+    margin-top: -50px;
+} */
