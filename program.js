@@ -50,10 +50,10 @@ function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
         // $("#filledDisabled *").prop("disabled" ,false);
         $("#filledDisabled *").attr("disabled", false).on('click');
-        dCompany.value      = document.getElementById("dCompany").value
-        dContactName.value  = document.getElementById("dContactName").value
-        dEmail.value        = document.getElementById("dEmail").value
-        dPhone.value        = document.getElementById("dPhone").value
+        dCompany.value      = null;
+        dContactName.value  = null;
+        dPhone.value        = null;
+        dEmail.value        = null;
 
     }else if(autoCheckbox.checked == true){
             document.getElementById("dCompany").value = pName.value;
