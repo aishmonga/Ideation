@@ -196,7 +196,10 @@
                     <b>List internal timeout value for both rate requests and booking requests. How long will your system wait for the response?</b><br><script> document.write(getVal('timeout'))</script> </p>
                                 
                     <p style = " font-family: 'Times New Roman', Times, serif;">
-                    <b>List contact information for your support/help desk (name, email address, and phone number)?</b><script> document.write(getVal('contactInfo'))</script></p>
+                    <b>List contact information for your support/help desk (name, email address, and phone number respectivly)?</b><script> document.write(getVal('contactInfoName')) , document.write(",") ,
+                     document.write(getVal('contactInfoEmail')) , document.write(",") , document.write(getVal('contactInfoPhone')) </script>
+                        
+                    </p>
                                         
                     <p style = " font-family: 'Times New Roman', Times, serif;">
                     <b>List email address for system access to the Hertz Digital Asset Library (http://Hertz.Worktribe.com)?</b><br><script> document.write(getVal('libEmail'))</script></p>
