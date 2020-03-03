@@ -39,12 +39,8 @@ textarea{
 input{
     color: black;
     background-color: white ;
-    /* border: none; */
     font-family:"Ride",Muli,Helvetica,Arial,sans-serif;
-    
-    /* margin-left: 2%; */
-    
-    /* opacity: 0.5; */
+
 }
 
 input[type="submit"]{
@@ -132,10 +128,22 @@ pre {
     display: table;
 }   
 
-input.inRow1,input.inRow2,input.inRow3{
+input.inRow{
    display: table-row;
 } */
 
+
 .rowAlign{
-   
+    float: left;
+    display: block;
+       
 }
+
+input.inRow{
+    display: block;
+    float: left;
+    margin: 0px;
+    width: 200px;
+}
+
+ 
