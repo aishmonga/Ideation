@@ -53,3 +53,9 @@ img{
 #center{
     text-align: center;
 }
+
+button{
+    background-color: #ffd100;
+    margin-top:auto;
+    font-weight: bold;
+}

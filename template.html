@@ -215,19 +215,26 @@
             </div>
             
         </form>
+
+   
     
-</div>
-<a class="word-export" style="margin-left: 50%;" href="javascript:void(0)"> Export as .doc </a> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<script src="FileSaver.js"></script> 
-<script src="jquery.wordexport.js"></script> 
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $("a.word-export").click(function(event) {
-            $("#page-content").wordExport();
+    <button type="button"> Edit </button>
+
+    <button class="word-export" href="javascript:void(0)"> Submit to Export as Doc</a> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="FileSaver.js"></script> 
+    <script src="jquery.wordexport.js"></script> 
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+        $("button.word-export").click(function(event) {
+        $("#page-content").wordExport();
         });
-    });
+        });
     </script>
+    </button>
+
+</div>
+
 
 </body>
 <script type="text/javascript">
