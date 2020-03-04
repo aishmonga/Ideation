@@ -19,6 +19,9 @@
     </head>
     <body onload="todayDate(); disableAll(); showFutureDate(); autofill(); "  >
 <script src = "program.js"></script>
+<script type="text/javascript"> 
+    autofill();
+</script>
 
     <!-- <div class="googoose"> -->
         <div class="exportContent">
@@ -118,7 +121,7 @@
                             <br>
                             <li class="grey">* Web Site Address (URL) of system being developed:
                                 <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required
-                                pattern="(https://)(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com" value ="https://www.go.com" >
+                                pattern="(https://)(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com" >
                                 <!-- "[www.]( [a-z0-9\.]+)" -->
                             </li>
                             <!-- todo -->
@@ -143,7 +146,7 @@
                                 </label><br>
                                 * Primary Source <select id="bookingSourcep" name="bookingSourcep" required data-placeholder ="Select a country" >
                                         <!-- <option disabled value="" selected>Select a country</option> -->
-                                        <option value="Afganistan" selected>Afghanistan</option>
+                                        <option value="Afganistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
                                         <option value="American Samoa">American Samoa</option>
@@ -887,7 +890,8 @@
                                 </li><br>
                                 <li class="grey">
                                     <label for="contactInfo">
-                                        List contact information for your support/help desk (name with email address or phone number)?
+                                        List contact information for your support/help desk (name with email address or phone number)?<br>
+                                        <i>(multiple contacts should be separated by semi-colon)</i>
                                     </label>
                                     <div id="rowAlign" >
                                         <label for="contactInfoName">Name &nbsp;
@@ -915,13 +919,16 @@
 
                                     <label for="iata">
                                         List the IATA number(s) to be used :
+                                        <br>
+                                        <i>(multiple values should be separated by semi-colon)</i>
                                     </label>
-                                    <input class="form-control unique" type="number" name="iata" id="iata">
+                                    <input class="form-control unique" type="text" name="iata" id="iata">
                                 </li><br>
                                 <li class="grey">
 
                                     <label for="ip">
-                                        * List the IP address(s) to be used :
+                                        * List the IP address(s) to be used :<br>
+                                        <i>(multiple values should be separated by semi-colon)</i>
                                     </label>
                                     <!-- <input class="form-control unique" type="number" name="field_name[]" id="field_name[]" minlength="7" maxlength="15" size="15"  pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" > -->
 <!--                                     
@@ -935,7 +942,7 @@
                                     <!-- For multiple IP adddresses fields adding dynamically  -->
                                     <div class="field_wrapper">
                                         <div id="ipaddress">
-                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4">
+                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" required >
                                             <!-- <a href="javascript:void(0);" class="add_button" title="Add field">
                                                 <img src="add-icon.png" width="20px" height="20px"/></a> -->
                                         </div>

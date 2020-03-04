@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 var queryString = location.search;
 var urlParams = new URLSearchParams(queryString);
-console.log("............." + queryString);
+// console.log("............." + queryString);
 
 
 function autoFillDevPartner(){
@@ -140,8 +140,9 @@ function showFutureDate(elementID){
     var day = t.getDay();
     var oneYearFromNow = new Date(year + 1, month, day).toISOString().split('T')[0];
 
-    document.getElementsByName(id)[0].setAttribute('min', today);
-    document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
+    // document.getElementsByName(id)[0].setAttribute('min', today);
+    // document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
+  
     // alert(oneYearFromNow);
 }
 
@@ -198,7 +199,8 @@ function getVal(key){
     }else if(value=="on"){
         return "&#x1F5F9";
     }else if( value ==""){
-        return "&#x2718";
+        // return "&#x2718";
+        return "";
     }
     else if(key=='bookingSources' && value != "")  //For printing secondary booking source values in template.html
     {
@@ -278,12 +280,143 @@ function callOnSubmit(){
 // }
 
 function autofill(){
-    // alert(urlParams.get("pName"));
-    // var x = document.getElementById(urlParams.get("pName")).value;
-    // document.getElementById("pName").innerHTML = x;
 
-    // document.getElementById("pName").setAttribute(document.getElementById(urlParams.get("pName")).value);
-//    alert("aaa");
-//    console.log("kkka");
+    // alert("check: " +   getVal("pName"));    
+
+    var pname = document.getElementById("pName");   
+    pname.setAttribute( "value", (getVal("pName")) );
+
+    var pcontactname = document.getElementById("pContactName");   
+    pcontactname.setAttribute( "value", (getVal("pContactName")) );
+
+    var pemail = document.getElementById("pEmail");   
+    pemail.setAttribute( "value", (getVal("pEmail")) );
+
+    var pphone = document.getElementById("pPhone");   
+    pphone.setAttribute( "value", (getVal("pPhone")) );
+
+    var p = document.getElementById("autoCheckbox");   
+    p.setAttribute( "value", (getVal("autoCheckbox")) );
+
+    // if(p == "on"){
+    //     var dcompany = document.getElementById("pName");  
+    //     // autoCheckbox.checked = true; 
+    //     dcompany.setAttribute( "value", checked = true );
+        
+    // }else{
+    //     var dcompany = document.getElementById("dCompany");   
+    //     dcompany.setAttribute( "value", (getVal("dCompany")) );
+      
+    // }
    
+    var ccontactName = document.getElementById("cContactName");   
+    ccontactName.setAttribute( "value", (getVal("cContactName")) );
+    
+    var cemail = document.getElementById("cEmail");   
+    cemail.setAttribute( "value", (getVal("cEmail")) );
+    
+    var cphone = document.getElementById("cPhone");   
+    cphone.setAttribute( "value", (getVal("cPhone")) );
+
+
+    // CHANGE CROSS VAL TO EMPTY
+    // var helpcontactname = document.getElementById("helpContactName");   
+    // helpcontactname.setAttribute( "value", (getVal("helpContactName")) );
+    
+    // var helpemail = document.getElementById("helpEmail");   
+    // helpemail.setAttribute( "value", (getVal("helpEmail")) );
+
+    
+
+    // var hcheckbox = document.getElementById("hCheckbox");   
+    // hcheckbox.setAttribute( "value", (getVal("hCheckbox")) );
+    
+    // var dcheckbox = document.getElementById("dCheckbox");   
+    // dcheckbox.setAttribute( "value", (getVal("dCheckbox")) );
+
+    // var tcheckbox = document.getElementById("tCheckbox");   
+    // tcheckbox.setAttribute( "value", (getVal("tCheckbox")) );
+
+    // var fcheckbox = document.getElementById("fCheckbox");   
+    // fcheckbox.setAttribute( "value", (getVal("fCheckbox")) );   
+
+
+    var weburl = document.getElementById("webUrl");   
+    weburl.setAttribute( "value", (getVal("webUrl")) );   
+
+    
+    var hertzLivedate = document.getElementById("hertzLivedate");   
+    hertzLivedate.setAttribute( "value", (getVal("hertzLivedate")) );   
+
+    var dollarLivedate = document.getElementById("dollarLivedate");   
+    dollarLivedate.setAttribute( "value", (getVal("dollarLivedate")) );   
+
+    var thriftyLivedate = document.getElementById("thriftyLivedate");   
+    thriftyLivedate.setAttribute( "value", (getVal("thriftyLivedate")) );   
+
+    var fireflyLivedate = document.getElementById("fireflyLivedate");   
+    fireflyLivedate.setAttribute( "value", (getVal("fireflyLivedate")) );   
+
+
+
+    // var bookingSourcep = document.getElementById("bookingSourcep");   
+    // bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
+
+    // var bookingSources = document.getElementById("bookingSources");   
+    // bookingSources.setAttribute( "value", (getVal("bookingSources")) );
+
+
+    // CHECKBOXES
+
+
+
+    var volH = document.getElementById("volH");   
+    volH.setAttribute( "value", (getVal("volH")) );
+
+    var volD = document.getElementById("volD");   
+    volD.setAttribute( "value", (getVal("volD")) );
+
+    var volF = document.getElementById("volF");   
+    volF.setAttribute( "value", (getVal("volF")) );
+
+    var volT = document.getElementById("volT");   
+    volT.setAttribute( "value", (getVal("volT")) );
+
+
+    // REPLACE CROSS WITH EMPTY  
+    // var expTime = document.getElementById("expTime");   
+    // expTime.setAttribute( "value", (getVal("expTime")) );
+    
+
+    // var numVehicles = document.getElementById("numVehicles");   
+    // numVehicles.setAttribute( "value", (getVal("numVehicles")) )
+
+
+    var timeout = document.getElementById("timeout");   
+    timeout.setAttribute( "value", (getVal("timeout")) );
+
+
+
+    // CROSS
+    // var contactInfoName = document.getElementById("contactInfoName");   
+    // contactInfoName.setAttribute( "value", (getVal("contactInfoName")) );
+
+    // var contactInfoEmail = document.getElementById("contactInfoEmail");   
+    // contactInfoEmail.setAttribute( "value", (getVal("contactInfoEmail")) );
+
+    // var contactInfoPhone = document.getElementById("contactInfoPhone");   
+    // contactInfoPhone.setAttribute( "value", (getVal("contactInfoPhone")) );
+
+
+    // CROSS
+    // var libEmail = document.getElementById("libEmail");   
+    // libEmail.setAttribute( "value", (getVal("libEmail")) );
+
+
+    var iata = document.getElementById("iata");   
+    iata.setAttribute( "value", (getVal("iata")) );
+
+    // var field_name[] = document.getElementById("field_name[]");   
+    // field_name[].setAttribute( "value", (getVal("field_name[]")) );
+
 }

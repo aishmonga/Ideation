@@ -886,7 +886,8 @@
                                 </li><br>
                                 <li class="grey">
                                     <label for="contactInfo">
-                                        List contact information for your support/help desk (name with email address or phone number)?
+                                        List contact information for your support/help desk (name with email address or phone number)? <br>
+                                        <i>(multiple contacts should be separated by semi-colon)</i>
                                     </label>
                                     <div id="rowAlign" >
                                         <label for="contactInfoName">Name &nbsp;
@@ -914,13 +915,17 @@
 
                                     <label for="iata">
                                         List the IATA number(s) to be used :
+                                        <br>
+                                        <i>(multiple values should be separated by semi-colon)</i>
                                     </label>
-                                    <input class="form-control unique" type="number" name="iata" id="iata">
+                                    <input class="form-control unique" type="text" name="iata" id="iata">
                                 </li><br>
                                 <li class="grey">
 
                                     <label for="ip">
                                         * List the IP address(s) to be used :
+                                        <br>
+                                        <i>(multiple values should be separated by semi-colon)</i>
                                     </label>
                                     <!-- <input class="form-control unique" type="number" name="field_name[]" id="field_name[]" minlength="7" maxlength="15" size="15"  pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" > -->
 <!--                                     
@@ -934,7 +939,7 @@
                                     <!-- For multiple IP adddresses fields adding dynamically  -->
                                     <div class="field_wrapper">
                                         <div id="ipaddress">
-                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4">
+                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" required>
                                             <!-- <a href="javascript:void(0);" class="add_button" title="Add field">
                                                 <img src="add-icon.png" width="20px" height="20px"/></a> -->
                                         </div>
