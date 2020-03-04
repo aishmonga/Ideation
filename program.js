@@ -192,7 +192,9 @@ function toDoc(element,filename = ''){
 function getVal(key){
     var value = urlParams.get(key);
     if(value==null){
-        return "&#x1F5F7";
+        // return "&#x1F5F7"; // cross box
+        // &#9744; is for blank box
+        return "";
     }else if(value=="on"){
         return "&#x1F5F9";
     }else if( value ==""){
