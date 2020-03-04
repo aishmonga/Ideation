@@ -927,28 +927,15 @@
                                         <br>
                                         <i>(multiple values should be separated by semi-colon)</i>
                                     </label>
-                                    <!-- <input class="form-control unique" type="number" name="field_name[]" id="field_name[]" minlength="7" maxlength="15" size="15"  pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required value="1.2.3.4" > -->
-<!--                                     
-<pre id="pre"> 
-{  }
-</pre>
-                                    <button type="button" onclick="addIp()"  class="btn btn3d btn-info btn-lg" >Click to add IPs </button>
                                    
-                                    -->
-                                   
-                                    <!-- For multiple IP adddresses fields adding dynamically  -->
                                     <div class="field_wrapper">
                                         <div id="ipaddress">
-                                            <input type="text" id="field_name[]" class="form-control unique" name="field_name[]" minlength="7" maxlength="15" size="15" required>
-                                            <!-- <a href="javascript:void(0);" class="add_button" title="Add field">
-                                                <img src="add-icon.png" width="20px" height="20px"/></a> -->
+                                            <input type="text" id="ip" class="form-control unique" name="ip" minlength="7" maxlength="15" size="15" required>
                                         </div>
 
                                     </div>
                                    
                                 </li><br>
-                                         <!-- submitting all the IP values in this field -->
-                                   <input type="text" class="hidden" id="ipAddr" name="ipAddr" value="">
 
                                 <input class="form-control sbt" type="submit" id="subBtn" value="Submit" onclick="secondaryBooking();">
                         </div>

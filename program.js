@@ -289,7 +289,25 @@ function autofill(){
     var pphone = document.getElementById("pPhone");   
     pphone.setAttribute( "value", (getVal("pPhone")) );
 
-    // var p = document.getElementById("autoCheckbox");   
+
+    var p = document.getElementById("autoCheckbox"); 
+    if(p.value == "on"){
+        // alert(p.value);
+        document.getElementById("autoCheckbox").checked = true;
+
+         var dcompany = document.getElementById("dCompany");  
+         dcompany.setAttribute( "value", (getVal("pName")) );
+
+         var dcontactname = document.getElementById("dContactName");
+         dcontactname.setAttribute( "value", (getVal("pContactName")) );
+
+         var demail = document.getElementById("dEmail");
+         demail.setAttribute( "value", (getVal("pEmail")) );
+         
+         var dphone = document.getElementById("dPhone");
+         dphone.setAttribute( "value", (getVal("pPhone")) );
+
+    }  
     // p.setAttribute( "checked ", "checked" );
 
     // alert("pppp"  + p.value);
@@ -308,7 +326,7 @@ function autofill(){
     var ccontactName = document.getElementById("cContactName");   
     ccontactName.setAttribute( "value", (getVal("cContactName")) );
     
-    var cemail = document.getElementById("cEmail");   
+    var cemail = document.getElementById("cEmail");     
     cemail.setAttribute( "value", (getVal("cEmail")) );
     
     var cphone = document.getElementById("cPhone");   
@@ -316,25 +334,25 @@ function autofill(){
 
 
     // CHANGE CROSS VAL TO EMPTY
-    // var helpcontactname = document.getElementById("helpContactName");   
-    // helpcontactname.setAttribute( "value", (getVal("helpContactName")) );
+    var helpcontactname = document.getElementById("helpContactName");   
+    helpcontactname.setAttribute( "value", (getVal("helpContactName")) );
     
-    // var helpemail = document.getElementById("helpEmail");   
-    // helpemail.setAttribute( "value", (getVal("helpEmail")) );
+    var helpemail = document.getElementById("helpEmail");   
+    helpemail.setAttribute( "value", (getVal("helpEmail")) );
 
     
 
-    // var hcheckbox = document.getElementById("hCheckbox");   
-    // hcheckbox.setAttribute( "value", (getVal("hCheckbox")) );
+    var hcheckbox = document.getElementById("hCheckbox");   
+    hcheckbox.setAttribute( "value", (getVal("hCheckbox")) );
     
-    // var dcheckbox = document.getElementById("dCheckbox");   
-    // dcheckbox.setAttribute( "value", (getVal("dCheckbox")) );
+    var dcheckbox = document.getElementById("dCheckbox");   
+    dcheckbox.setAttribute( "value", (getVal("dCheckbox")) );
 
-    // var tcheckbox = document.getElementById("tCheckbox");   
-    // tcheckbox.setAttribute( "value", (getVal("tCheckbox")) );
+    var tcheckbox = document.getElementById("tCheckbox");   
+    tcheckbox.setAttribute( "value", (getVal("tCheckbox")) );
 
-    // var fcheckbox = document.getElementById("fCheckbox");   
-    // fcheckbox.setAttribute( "value", (getVal("fCheckbox")) );   
+    var fcheckbox = document.getElementById("fCheckbox");   
+    fcheckbox.setAttribute( "value", (getVal("fCheckbox")) );   
 
 
     var weburl = document.getElementById("webUrl");   
@@ -355,11 +373,11 @@ function autofill(){
 
 
 
-    // var bookingSourcep = document.getElementById("bookingSourcep");   
-    // bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
+    var bookingSourcep = document.getElementById("bookingSourcep");   
+    bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
 
-    // var bookingSources = document.getElementById("bookingSources");   
-    // bookingSources.setAttribute( "value", (getVal("bookingSources")) );
+    var bookingSources = document.getElementById("bookingSources");   
+    bookingSources.setAttribute( "value", (getVal("bookingSources")) );
 
 
     // CHECKBOXES
@@ -380,12 +398,12 @@ function autofill(){
 
 
     // REPLACE CROSS WITH EMPTY  
-    // var expTime = document.getElementById("expTime");   
-    // expTime.setAttribute( "value", (getVal("expTime")) );
+    var expTime = document.getElementById("expTime");   
+    expTime.setAttribute( "value", (getVal("expTime")) );
     
 
-    // var numVehicles = document.getElementById("numVehicles");   
-    // numVehicles.setAttribute( "value", (getVal("numVehicles")) )
+    var numVehicles = document.getElementById("numVehicles");   
+    numVehicles.setAttribute( "value", (getVal("numVehicles")) )
 
 
     var timeout = document.getElementById("timeout");   
@@ -394,25 +412,25 @@ function autofill(){
 
 
     // CROSS
-    // var contactInfoName = document.getElementById("contactInfoName");   
-    // contactInfoName.setAttribute( "value", (getVal("contactInfoName")) );
+    var contactInfoName = document.getElementById("contactInfoName");   
+    contactInfoName.setAttribute( "value", (getVal("contactInfoName")) );
 
-    // var contactInfoEmail = document.getElementById("contactInfoEmail");   
-    // contactInfoEmail.setAttribute( "value", (getVal("contactInfoEmail")) );
+    var contactInfoEmail = document.getElementById("contactInfoEmail");   
+    contactInfoEmail.setAttribute( "value", (getVal("contactInfoEmail")) );
 
-    // var contactInfoPhone = document.getElementById("contactInfoPhone");   
-    // contactInfoPhone.setAttribute( "value", (getVal("contactInfoPhone")) );
+    var contactInfoPhone = document.getElementById("contactInfoPhone");   
+    contactInfoPhone.setAttribute( "value", (getVal("contactInfoPhone")) );
 
 
     // CROSS
-    // var libEmail = document.getElementById("libEmail");   
-    // libEmail.setAttribute( "value", (getVal("libEmail")) );
+    var libEmail = document.getElementById("libEmail");   
+    libEmail.setAttribute( "value", (getVal("libEmail")) );
 
 
     var iata = document.getElementById("iata");   
     iata.setAttribute( "value", (getVal("iata")) );
 
-    // var field_name[] = document.getElementById("field_name[]");   
-    // field_name[].setAttribute( "value", (getVal("field_name[]")) );
+    var ip = document.getElementById("ip");   
+    ip.setAttribute( "value", (getVal("ip")) );
 
 }
