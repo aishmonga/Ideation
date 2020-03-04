@@ -16,7 +16,7 @@ $(document).ready(function(){
                 if(x < maxField){
                     x++; //Increment field counter
                     $(wrapper).append(fieldHTML); //Add field html
-                }
+                }   
             });
 
             //Once remove button is clicked
@@ -42,9 +42,9 @@ $(document).ready(function(){
         }
 
 var queryString = location.search;
-//Query string printing for reference in console
-console.log("Query string value in another page"+queryString);
 var urlParams = new URLSearchParams(queryString);
+console.log("............." + queryString);
+
 
 function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
@@ -274,3 +274,14 @@ function callOnSubmit(){
 //     document.getElementById("pre").innerHTML = document.getElementById("ip").value;
 //     // doNull("ip");
 // }
+
+function autofill(){
+    // alert(urlParams.get("pName"));
+    // var x = document.getElementById(urlParams.get("pName")).value;
+    // document.getElementById("pName").innerHTML = x;
+
+    // document.getElementById("pName").setAttribute(document.getElementById(urlParams.get("pName")).value);
+//    alert("aaa");
+//    console.log("kkka");
+   
+}

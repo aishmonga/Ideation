@@ -24,7 +24,7 @@
 <body>
     <!-- onload="parseQueryString(queryString);" -->
 <div id="main">  
-        <form id="tempForm"> 
+        <form id="tempForm" action="edit.html"> 
             <div id="page-content">
                     <div id="center">
                         <img src="logo.png" alt="logo" width="50%">
@@ -218,7 +218,9 @@
 
    
     
-    <button type="button"> Edit </button>
+    <!-- <button type="button" onclick="window.history.go(-1)" > Edit </button> -->
+    <input type="button" onclick="window.location('edit.html' +queryString)" value="Edit" > 
+
 
     <button class="word-export" href="javascript:void(0)"> Submit to Export as Doc</a> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
