@@ -200,7 +200,7 @@ function getVal(key){
         return "&#x1F5F9";
     }else if( value ==""){
         // return "&#x2718";
-        return "";
+        return "";  
     }
     else if(key=='bookingSources' && value != "")  //For printing secondary booking source values in template.html
     {
@@ -295,13 +295,15 @@ function autofill(){
     var pphone = document.getElementById("pPhone");   
     pphone.setAttribute( "value", (getVal("pPhone")) );
 
-    var p = document.getElementById("autoCheckbox");   
-    p.setAttribute( "value", (getVal("autoCheckbox")) );
+    // var p = document.getElementById("autoCheckbox");   
+    // p.setAttribute( "checked ", "checked" );
 
-    // if(p == "on"){
+    // alert("pppp"  + p.value);
+
+    // if(p.value == "&#x1F5F9"){
     //     var dcompany = document.getElementById("pName");  
     //     // autoCheckbox.checked = true; 
-    //     dcompany.setAttribute( "value", checked = true );
+    //     dcompany.setAttribute( "checked", checked);
         
     // }else{
     //     var dcompany = document.getElementById("dCompany");   
