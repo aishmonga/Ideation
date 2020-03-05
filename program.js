@@ -73,8 +73,17 @@ function disableAll(){
 function enableFew(){
     if(hCheckbox.checked == true){
         $(".showHertz").prop('disabled', false);
-        showFutureDate("hertzLivedate");
-        makeReqd("showHertz");
+
+        if(developBookH.checked == false){
+        $("#developCancelH").prop('disabled', true);
+        
+        }else{
+        $("#developCancelH").prop('disabled', false);
+        }
+
+    
+    showFutureDate("hertzLivedate");
+    makeReqd("showHertz");
         // $(".showHertz").prop('required',true);
 
 
@@ -84,6 +93,15 @@ function enableFew(){
     }
     if(dCheckbox.checked == true){
         $(".showDollar").prop('disabled', false);
+
+        
+        if(developBookD.checked == false){
+        $("#developCancelD").prop('disabled', true);
+        
+        }else{
+        $("#developCancelD").prop('disabled', false);
+        }   
+
         showFutureDate("dollarLivedate");
         makeReqd("showDollar");
         // $(".showDollar").prop('required',true);
@@ -94,6 +112,15 @@ function enableFew(){
     }
     if(tCheckbox.checked == true){
         $(".showThrifty").prop('disabled', false);
+
+        
+        if(developBookT.checked == false){
+        $("#developCancelT").prop('disabled', true);
+        
+        }else{
+        $("#developCancelT").prop('disabled', false);
+        }           
+
         showFutureDate("thriftyLivedate");
         makeReqd("showThrifty");
         // $(".showThrifty").prop('required',true);
@@ -104,6 +131,14 @@ function enableFew(){
     }
     if(fCheckbox.checked == true){
         $(".showFirefly").prop('disabled', false);
+
+        if(developBookF.checked == false){
+        $("#developCancelF").prop('disabled', true);
+        
+        }else{
+        $("#developCancelF").prop('disabled', false);
+        }  
+
         showFutureDate("fireflyLivedate");
         makeReqd("showFirefly");
         // $(".showFirefly").prop('required',true);
@@ -290,9 +325,11 @@ function autofill(){
     pphone.setAttribute( "value", (getVal("pPhone")) );
 
 
-    var p = document.getElementById("autoCheckbox"); 
-    if(p.value == "on"){
-        // alert(p.value);
+    // var autocheckbox = document.getElementById("autoCheckbox"); 
+    // if(autocheckbox.value == "on"){
+        // alert((getVal("autoCheckbox")) )   ;
+        if(getVal("autoCheckbox") == "&#x1F5F9"){
+        
         document.getElementById("autoCheckbox").checked = true;
 
          var dcompany = document.getElementById("dCompany");  
@@ -307,22 +344,10 @@ function autofill(){
          var dphone = document.getElementById("dPhone");
          dphone.setAttribute( "value", (getVal("pPhone")) );
 
-    }  
-    // p.setAttribute( "checked ", "checked" );
-
-    // alert("pppp"  + p.value);
-
-    // if(p.value == "&#x1F5F9"){
-    //     var dcompany = document.getElementById("pName");  
-    //     // autoCheckbox.checked = true; 
-    //     dcompany.setAttribute( "checked", checked);
-        
-    // }else{
-    //     var dcompany = document.getElementById("dCompany");   
-    //     dcompany.setAttribute( "value", (getVal("dCompany")) );
-      
-    // }
-   
+    }else{
+        document.getElementById("autoCheckbox").checked = false;
+    } 
+       
     var ccontactName = document.getElementById("cContactName");   
     ccontactName.setAttribute( "value", (getVal("cContactName")) );
     
@@ -342,17 +367,52 @@ function autofill(){
 
     
 
-    var hcheckbox = document.getElementById("hCheckbox");   
-    hcheckbox.setAttribute( "value", (getVal("hCheckbox")) );
+    // var hcheckbox = document.querySelector.getVal("hCheckbox");  
+    alert(getVal("hCheckbox"));
+    if(getVal("hCheckbox") == "&#x1F5F9"){
+        document.getElementById("hCheckbox").checked = true;
+    }
+    else{
+        document.getElementById("hCheckbox").checked = false;
+    }
+
+    // var dcheckbox = document.getElementById("dCheckbox");   
+    // if(dcheckbox.value == "on"){
+    //     dcheckbox.checked = true;
+    // } 
+    if(getVal("dCheckbox") == "&#x1F5F9"){
+        
+        document.getElementById("dCheckbox").checked = true;
+    }else{
+        document.getElementById("dCheckbox").checked = false;
+    }
     
-    var dcheckbox = document.getElementById("dCheckbox");   
-    dcheckbox.setAttribute( "value", (getVal("dCheckbox")) );
 
-    var tcheckbox = document.getElementById("tCheckbox");   
-    tcheckbox.setAttribute( "value", (getVal("tCheckbox")) );
+    if(getVal("tCheckbox") == "&#x1F5F9"){
+        
+        document.getElementById("tCheckbox").checked = true;
+    }else{
+        document.getElementById("tCheckbox").checked = false;
+    }
 
-    var fcheckbox = document.getElementById("fCheckbox");   
-    fcheckbox.setAttribute( "value", (getVal("fCheckbox")) );   
+
+
+    if(getVal("fCheckbox") == "&#x1F5F9"){
+        
+        document.getElementById("fCheckbox").checked = true;
+    }else{
+        document.getElementById("fCheckbox").checked = false;
+    }
+
+    // var tcheckbox = document.getElementById("tCheckbox"); 
+    // if(tcheckbox.value == "on"){
+    //     tcheckbox.checked = true;
+    // }   
+
+    // var fcheckbox = document.getElementById("fCheckbox");  
+    // if(fcheckbox.value == "on"){
+    //     fcheckbox.checked = true;
+    // }  
 
 
     var weburl = document.getElementById("webUrl");   
