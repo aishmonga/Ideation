@@ -2,6 +2,11 @@ $(document).ready(function(){
             $('#bookingSources').chosen();
         });
 
+// function preventBack(){window.history.forward();}
+// setTimeout("preventBack()", 0);
+// window.onunload=function(){null};
+
+
 // For adding IP address field for multiple values
         $(document).ready(function(){
             var maxField = 10; //Input fields increment limitation
@@ -368,7 +373,7 @@ function autofill(){
     
 
     // var hcheckbox = document.querySelector.getVal("hCheckbox");  
-    alert(getVal("hCheckbox"));
+    // alert(getVal("hCheckbox"));
     if(getVal("hCheckbox") == "&#x1F5F9"){
         document.getElementById("hCheckbox").checked = true;
     }
@@ -433,14 +438,322 @@ function autofill(){
 
 
 
-    var bookingSourcep = document.getElementById("bookingSourcep");   
-    bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
+    // alert( getVal("bookingSourcep" ) );
+    document.getElementById("bookingSourcep").selectedIndex =  getVal("bookingSourcep" ); 
+    // var bookingSourcep = document.getElementById("bookingSourcep");   
+    // bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
 
-    var bookingSources = document.getElementById("bookingSources");   
-    bookingSources.setAttribute( "value", (getVal("bookingSources")) );
+
+    // alert( getVal("bookingSources" ) );
+    document.getElementById("bookingSources").selectedIndex =  getVal("bookingSources" );  
+    // error
+    // var bookingSources = document.getElementById("bookingSources");   
+    // bookingSources.setAttribute( "value", (getVal("bookingSources")) );
 
 
     // CHECKBOXES
+
+    // alert(getVal("methodNone"));
+    if(getVal("methodNone") == "&#x1F5F9"){
+        
+        document.getElementById("methodNone").checked = true;
+    }else{
+        document.getElementById("methodNone").checked = false;
+    }
+
+    if(getVal("methodExcal") == "&#x1F5F9"){
+        
+        document.getElementById("methodExcal").checked = true;
+    }else{
+        document.getElementById("methodExcal").checked = false;
+    }
+
+    if(getVal("methodHertz") == "&#x1F5F9"){
+        
+        document.getElementById("methodHertz").checked = true;
+    }else{
+        document.getElementById("methodHertz").checked = false;
+    }
+
+    if(getVal("methodDollar") == "&#x1F5F9"){
+        
+        document.getElementById("methodDollar").checked = true;
+    }else{
+        document.getElementById("methodDollar").checked = false;
+    }
+
+    if(getVal("methodThrifty") == "&#x1F5F9"){
+        
+        document.getElementById("methodThrifty").checked = true;
+    }else{
+        document.getElementById("methodThrifty").checked = false;
+    }
+
+
+    if(getVal("methodXml") == "&#x1F5F9"){
+        
+        document.getElementById("methodXml").checked = true;
+    }else{
+        document.getElementById("methodXml").checked = false;
+    }
+
+    
+    if(getVal("methodGds") == "&#x1F5F9"){
+        
+        document.getElementById("methodGds").checked = true;
+    }else{
+        document.getElementById("methodGds").checked = false;
+    }
+
+
+    
+    if(getVal("methodHttps") == "&#x1F5F9"){
+        
+        document.getElementById("methodHttps").checked = true;
+    }else{
+        document.getElementById("methodHttps").checked = false;
+    }
+
+// functionality
+
+    // alert(getVal("developPolicyH") );
+    if(getVal("developRateH") == "&#x1F5F9"){
+        $("#developRateH").prop('disabled', false);
+        document.getElementById("developRateH").checked = true;
+    }else{
+        document.getElementById("developRateH").checked = false;
+    }
+
+    if(getVal("developBookH") == "&#x1F5F9"){
+        $("#developBookH").prop('disabled', false);
+        document.getElementById("developBookH").checked = true;
+    }else{
+        document.getElementById("developBookH").checked = false;
+    }
+
+    
+    if(getVal("developViewH") == "&#x1F5F9"){
+        $("#developViewH").prop('disabled', false);
+        document.getElementById("developViewH").checked = true;
+    }else{
+        document.getElementById("developViewH").checked = false;
+    }
+    
+    
+    if(getVal("developModifyH") == "&#x1F5F9"){
+        $("#developModifyH").prop('disabled', false);
+        document.getElementById("developModifyH").checked = true;
+    }else{
+        document.getElementById("developModifyH").checked = false;
+    }
+
+    
+    if(getVal("developCancelH") == "&#x1F5F9"){
+        $("#developCancelH").prop('disabled', false);
+        document.getElementById("developCancelH").checked = true;
+    }else{
+        document.getElementById("developCancelH").checked = false;
+    }
+
+
+    if(getVal("developLocationH") == "&#x1F5F9"){
+        $("#developLocationH").prop('disabled', false);
+        document.getElementById("developLocationH").checked = true;
+    }else{
+        document.getElementById("developLocationH").checked = false;
+    }
+
+    if(getVal("developDeliveryH") == "&#x1F5F9"){
+        $("#developDeliveryH").prop('disabled', false);
+        document.getElementById("developDeliveryH").checked = true;
+    }else{
+        document.getElementById("developDeliveryH").checked = false;
+    }
+
+    if(getVal("developPrepayH") == "&#x1F5F9"){
+        $("#developPrepayH").prop('disabled', false);
+        document.getElementById("developPrepayH").checked = true;
+    }else{
+        document.getElementById("developPrepayH").checked = false;
+    }
+
+
+    if(getVal("developTourH") == "&#x1F5F9"){
+        $("#developTourH").prop('disabled', false);
+        document.getElementById("developTourH").checked = true;
+    }else{
+        document.getElementById("developTourH").checked = false;
+    }
+
+    
+    if(getVal("developPolicyH") == "&#x1F5F9"){
+        $("#developPolicyH").prop('disabled', false);
+        document.getElementById("developPolicyH").checked = true;
+    }else{
+        document.getElementById("developPolicyH").checked = false;
+    }
+
+    // dollar
+    if(getVal("developRateD") == "&#x1F5F9"){
+        $("#developRateD").prop('disabled', false);
+        document.getElementById("developRateD").checked = true;
+    }else{
+        document.getElementById("developRateD").checked = false;
+    }
+    
+    if(getVal("developBookD") == "&#x1F5F9"){
+        $("#developBookD").prop('disabled', false);
+        document.getElementById("developBookD").checked = true;
+    }else{
+        document.getElementById("developBookD").checked = false;
+    }
+
+    if(getVal("developViewD") == "&#x1F5F9"){
+        $("#developViewD").prop('disabled', false);
+        document.getElementById("developViewD").checked = true;
+    }else{
+        document.getElementById("developViewD").checked = false;
+    }
+
+    if(getVal("developModifyD") == "&#x1F5F9"){
+        $("#developModifyD").prop('disabled', false);
+        document.getElementById("developModifyD").checked = true;
+    }else{
+        document.getElementById("developModifyD").checked = false;
+    }
+
+    if(getVal("developCancelD") == "&#x1F5F9"){
+        $("#developCancelD").prop('disabled', false);
+        document.getElementById("developCancelD").checked = true;
+    }else{
+        document.getElementById("developCancelD").checked = false;
+    }
+
+    if(getVal("developLocationD") == "&#x1F5F9"){
+        $("#developLocationD").prop('disabled', false);
+        document.getElementById("developLocationD").checked = true;
+    }else{
+        document.getElementById("developLocationD").checked = false;
+    }
+
+    if(getVal("developTourD") == "&#x1F5F9"){
+        $("#developTourD").prop('disabled', false);
+        document.getElementById("developTourD").checked = true;
+    }else{
+        document.getElementById("developTourD").checked = false;
+    }
+
+
+// thrifty
+
+if(getVal("developRateT") == "&#x1F5F9"){
+    $("#developRateT").prop('disabled', false);
+    document.getElementById("developRateT").checked = true;
+}else{
+    document.getElementById("developRateT").checked = false;
+}
+
+
+if(getVal("developBookT") == "&#x1F5F9"){
+    $("#developBookT").prop('disabled', false);
+    document.getElementById("developBookT").checked = true;
+}else{
+    document.getElementById("developBookT").checked = false;
+}
+
+if(getVal("developViewT") == "&#x1F5F9"){
+    $("#developViewT").prop('disabled', false);
+    document.getElementById("developViewT").checked = true;
+}else{
+    document.getElementById("developViewT").checked = false;
+}
+
+if(getVal("developModifyT") == "&#x1F5F9"){
+    $("#developModifyT").prop('disabled', false);
+    document.getElementById("developModifyT").checked = true;
+}else{
+    document.getElementById("developModifyT").checked = false;
+}
+
+if(getVal("developCancelT") == "&#x1F5F9"){
+    $("#developCancelT").prop('disabled', false);
+    document.getElementById("developCancelT").checked = true;
+}else{
+    document.getElementById("developCancelT").checked = false;
+}
+
+if(getVal("developLocationT") == "&#x1F5F9"){
+    $("#developLocationT").prop('disabled', false);
+    document.getElementById("developLocationT").checked = true;
+}else{
+    document.getElementById("developLocationT").checked = false;
+}
+
+if(getVal("developTourT") == "&#x1F5F9"){
+    $("#developTourT").prop('disabled', false);
+    document.getElementById("developTourT").checked = true;
+}else{
+    document.getElementById("developTourT").checked = false;
+}
+
+
+// firefly
+
+if(getVal("developRateF") == "&#x1F5F9"){
+    $("#developRateF").prop('disabled', false);
+    document.getElementById("developRateF").checked = true;
+}else{
+    document.getElementById("developRateF").checked = false;
+}
+
+
+
+if(getVal("developBookF") == "&#x1F5F9"){
+    $("#developBookF").prop('disabled', false);
+    document.getElementById("developBookF").checked = true;
+}else{
+    document.getElementById("developBookF").checked = false;
+}
+
+
+if(getVal("developViewF") == "&#x1F5F9"){
+    $("#developViewF").prop('disabled', false);
+    document.getElementById("developViewF").checked = true;
+}else{
+    document.getElementById("developViewF").checked = false;
+}
+
+
+
+if(getVal("developModifyF") == "&#x1F5F9"){
+    $("#developModifyF").prop('disabled', false);
+    document.getElementById("developModifyF").checked = true;
+}else{
+    document.getElementById("developModifyF").checked = false;
+}
+
+
+if(getVal("developCancelF") == "&#x1F5F9"){
+    $("#developCancelF").prop('disabled', false);
+    document.getElementById("developCancelF").checked = true;
+}else{
+    document.getElementById("developCancelF").checked = false;
+}
+
+if(getVal("developLocationF") == "&#x1F5F9"){
+    $("#developLocationF").prop('disabled', false);
+    document.getElementById("developLocationF").checked = true;
+}else{
+    document.getElementById("developLocationF").checked = false;
+}
+
+
+if(getVal("developTourF") == "&#x1F5F9"){
+    $("#developTourF").prop('disabled', false);
+    document.getElementById("developTourF").checked = true;
+}else{
+    document.getElementById("developTourF").checked = false;
+}
 
 
 
