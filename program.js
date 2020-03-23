@@ -1,10 +1,10 @@
-$(document).ready(function(){
-            $('#bookingSources').chosen();
-        });
+// $(document).ready(function(){
+//             $('#bookingSources').chosen();
+//         });
 
-function preventBack(){window.history.forward();}
-setTimeout("preventBack()", 0);
-window.onunload=function(){null};
+// function preventBack(){window.history.forward();}
+// setTimeout("preventBack()", 0);
+// window.onunload=function(){null};
 
 
 // For adding IP address field for multiple values
