@@ -81,9 +81,9 @@ function enableFew(){
 
         if(developBookH.checked == false){
         $("#developCancelH").prop('disabled', true);
-        
-        }else{
-        $("#developCancelH").prop('disabled', false);
+        $("#developViewH").prop('disabled', true);
+        $("#developModifyH").prop('disabled', true);
+
         }
 
     
@@ -102,9 +102,9 @@ function enableFew(){
         
         if(developBookD.checked == false){
         $("#developCancelD").prop('disabled', true);
-        
-        }else{
-        $("#developCancelD").prop('disabled', false);
+        $("#developViewD").prop('disabled', true);
+        $("#developModifyD").prop('disabled', true);
+
         }   
 
         showFutureDate("dollarLivedate");
@@ -121,9 +121,9 @@ function enableFew(){
         
         if(developBookT.checked == false){
         $("#developCancelT").prop('disabled', true);
-        
-        }else{
-        $("#developCancelT").prop('disabled', false);
+        $("#developViewT").prop('disabled', true);
+        $("#developModifyT").prop('disabled', true);
+
         }           
 
         showFutureDate("thriftyLivedate");
@@ -139,9 +139,9 @@ function enableFew(){
 
         if(developBookF.checked == false){
         $("#developCancelF").prop('disabled', true);
-        
-        }else{
-        $("#developCancelF").prop('disabled', false);
+        $("#developViewF").prop('disabled', true);
+        $("#developModifyF").prop('disabled', true);    
+      
         }  
 
         showFutureDate("fireflyLivedate");
