@@ -1,7 +1,8 @@
-// $(document).ready(function(){
-//             $('#bookingSources').chosen();
-//         });
+$(document).ready(function(){
+            $('#bookingSources').chosen();
+        });
 
+        
 // function preventBack(){window.history.forward();}
 // setTimeout("preventBack()", 0);
 // window.onunload=function(){null};
@@ -436,21 +437,38 @@ function autofill(){
     var fireflyLivedate = document.getElementById("fireflyLivedate");   
     fireflyLivedate.setAttribute( "value", (getVal("fireflyLivedate")) );   
 
+    
+    function setSelectedValue(selectObj, valueToSet) {
+        if (valueToSet.indexOf(',') > -1){
+            var segments = valueToSet.split(','); 
+            for (var i = 0; i < selectObj.options.length; i++) {
+                for( j in segments){
+                    if (selectObj.options[i].text== segments[j]) {
+                        selectObj.options[i].selected = true;
+                      
+                    } 
+                }
+                
+            }
 
+        }else{
+            for (var i = 0; i < selectObj.options.length; i++) {
+                if (selectObj.options[i].text== valueToSet) {
+                    selectObj.options[i].selected = true;
+                   
+                }
+            }
+        }
+    }
 
-    // alert( getVal("bookingSourcep" ) );
-    document.getElementById("bookingSourcep").selectedIndex =  getVal("bookingSourcep" ); 
-    // var bookingSourcep = document.getElementById("bookingSourcep");   
-    // bookingSourcep.setAttribute( "value", (getVal("bookingSourcep")) );   
+    var bsp = document.getElementById("bookingSourcep");  
+    setSelectedValue(bsp, getVal("bookingSourcep"));
 
+    var bss = document.getElementById("bookingSources");  
+    setSelectedValue(bss, getVal("bookingSources"));
 
-    // alert( getVal("bookingSources" ) );
-    document.getElementById("bookingSources").selectedIndex =  getVal("bookingSources" );  
-    // error
-    // var bookingSources = document.getElementById("bookingSources");   
-    // bookingSources.setAttribute( "value", (getVal("bookingSources")) );
-
-
+// alert(getVal("bookingSources"));
+// alert(getVal("secSource"));
     // CHECKBOXES
 
     // alert(getVal("methodNone"));
