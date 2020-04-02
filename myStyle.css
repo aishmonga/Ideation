@@ -146,4 +146,25 @@ input.inRow{
     width: 200px;
 }
 
+/* input.twoInRow{
+    display: block;
+    float: left;
+    margin: 0px;
+    width: 300px;
+} */
+
+/* input.inFirstRow{
+    display: block;
+    float: left;
+    margin: 0px;
+    width: 300px;
+} */
+input.twoInRow{
+    display: block;
+    float: right;
+    margin: 0px;
+    width: 300px;
+}
+
+
  

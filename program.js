@@ -3,9 +3,9 @@ $(document).ready(function(){
         });
 
         
-// function preventBack(){window.history.forward();}
-// setTimeout("preventBack()", 0);
-// window.onunload=function(){null};
+function preventBack(){window.history.forward();}
+setTimeout("preventBack()", 0);
+window.onunload=function(){null};
 
 
 // For adding IP address field for multiple values
@@ -196,16 +196,25 @@ function toDoc(element,filename = ''){
     var html, blob, url, css;
 
     css = (
-    '<style>' +
+        '<style>' +
+        '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
+        'div.WordSection1 {page: WordSection1;}' +
+        '</style>'
+      );
 
-    'mso-ansi-font-weight: {bolder} ' +
+    // css = (
+    // '<style>' +
 
-    '</style>'
-    );
+    // 'mso-ansi-font-weight: {bolder} ' +
+
+    // 'p {font-family: "Times New Roman", Georgia, Serif; font-size: 14pt;}' +
+
+    // '</style>'
+    // );
 
     var html = preHtml+document.getElementById(element).innerHTML+postHtml;
 
-    var blob = new Blob(['\ufeff',css, html], {
+    var blob = new Blob(['\ufeff',css + html], {
         type: 'application/msword'
     });
 
@@ -236,7 +245,7 @@ function getVal(key){
     if(value==null){
         // return "&#x1F5F7"; // cross box
         // &#9744; is for blank box
-        return "";
+        return "&#9744";
     }else if(value=="on"){
         return "&#x1F5F9";
     }else if( value ==""){
@@ -821,7 +830,16 @@ if(getVal("developTourF") == "&#x1F5F9"){
     var iata = document.getElementById("iata");   
     iata.setAttribute( "value", (getVal("iata")) );
 
-    var ip = document.getElementById("ip");   
-    ip.setAttribute( "value", (getVal("ip")) );
+    var iph = document.getElementById("ipH");   
+    iph.setAttribute( "value", (getVal("ipH")) );
+
+    var ipd = document.getElementById("ipD");   
+    ipd.setAttribute( "value", (getVal("ipD")) );
+
+    var ipt = document.getElementById("ipT");   
+    ipt.setAttribute( "value", (getVal("ipT")) );
+
+    var ipf = document.getElementById("ipF");   
+    ipf.setAttribute( "value", (getVal("ipF")) );
 
 }
