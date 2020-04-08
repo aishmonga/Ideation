@@ -279,7 +279,7 @@ function makeReqd(elementClass){
 var x = document.getElementsByClassName(elementClass);
 
     for(i = 0; i< x.length; i++){
-    if( (x[i].type == "date" ) || (x[i].type == "number" ) ){
+    if( (x[i].type == "date" ) || (x[i].type == "number" ) || (x[i].type == "text") ){
             // alert("date/num...");
             x[i].setAttribute("required" , true)
             // alert("made rqd");
