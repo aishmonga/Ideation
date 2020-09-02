@@ -181,14 +181,14 @@ function showFutureDate(elementID){
     var day = t.getDay();
     var oneYearFromNow = new Date(year + 1, month, day).toISOString().split('T')[0];
 
-    // document.getElementsByName(id)[0].setAttribute('min', today);
-    // document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
+    document.getElementsByName(id)[0].setAttribute('min', today);
+    document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
   
     // alert(oneYearFromNow);
 }
 
 
-function toDoc(element,filename = ''){
+function toDoc(element){
 
     var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
     var postHtml = "</body></html>";
@@ -218,20 +218,23 @@ function toDoc(element,filename = ''){
         type: 'application/msword'
     });
 
-    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    // var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    var url = URL.createObjectURL(blob);
 
-    filename = filename?filename+'.doc':'Appendix-B.doc';
+    // filename = filename?filename+'.doc':'Appendix-B.doc';
 
     var downloadLink = document.createElement("a");
 
     document.body.appendChild(downloadLink);
+    downloadLink.href = url;
+    downloadLink.download = "Appendix-B";
 
     if(navigator.msSaveOrOpenBlob ){
-        navigator.msSaveOrOpenBlob(blob, filename);
+        navigator.msSaveOrOpenBlob(blob, "Appendix-B.doc" );
     }else{
-        downloadLink.href = url;
+        // downloadLink.href = url;
 
-        downloadLink.download = filename;
+        // downloadLink.download = "Appendix-B";
 
         downloadLink.click();
     }
@@ -826,20 +829,42 @@ if(getVal("developTourF") == "&#x1F5F9"){
     var libEmail = document.getElementById("libEmail");   
     libEmail.setAttribute( "value", (getVal("libEmail")) );
 
-
     var iata = document.getElementById("iata");   
     iata.setAttribute( "value", (getVal("iata")) );
 
     var iph = document.getElementById("ipH");   
-    iph.setAttribute( "value", (getVal("ipH")) );
+    // iph.setAttribute( "value", (getVal("ipH")) );
+    if (getVal("ipH") == "&#9744"){
+        iph.setAttribute( "value", "");
+        $("#ipH").prop('disabled', true);
+        // console.log("A1");
+    }else{
+        iph.setAttribute( "value", (getVal("ipH")) );
+        // console.log("B1");
+    }
 
     var ipd = document.getElementById("ipD");   
-    ipd.setAttribute( "value", (getVal("ipD")) );
+    if (getVal("ipD") == "&#9744"){
+        ipd.setAttribute( "value", "");
+        $("#ipD").prop('disabled', true);
+    }else{
+        ipd.setAttribute( "value", (getVal("ipD")) );
+    }
 
     var ipt = document.getElementById("ipT");   
-    ipt.setAttribute( "value", (getVal("ipT")) );
+    if (getVal("ipT") == "&#9744"){
+        ipt.setAttribute( "value", "");
+        $("#ipT").prop('disabled', true);
+    }else{
+        ipt.setAttribute( "value", (getVal("ipT")) );
+    }
 
     var ipf = document.getElementById("ipF");   
-    ipf.setAttribute( "value", (getVal("ipF")) );
+    if (getVal("ipF") == "&#9744"){
+        ipf.setAttribute( "value", "");
+        $("#ipF").prop('disabled', true);
+    }else{
+        ipf.setAttribute( "value", (getVal("ipF")) );
+    }
 
 }
