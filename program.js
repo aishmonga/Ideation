@@ -73,7 +73,18 @@ function autoFillDevPartner(){
 }
 
 function disableAll(){
+
+    // if (hCheckbox.checked == true){
+    //     alert("check 1");
+    //     $(":disableID").not("[id=hCheckbox]").prop("disabled", true);
+    // }
+    // else{
+    //     alert("check 2");
+    //     $(":disableID *").attr("disabled", true).off('click');
+    // }
+
     $(".disabledBlock *").attr("disabled", "disabled").off('click');
+    enableFew();
 };
 
 function enableFew(){

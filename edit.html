@@ -17,11 +17,13 @@
 <script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src = "chosen.jquery.min.js"></script>
     </head>
-    <body onload="todayDate(); disableAll(); showFutureDate(); autofill(); "  >
-<script src = "program.js"></script>
-<script type="text/javascript"> 
+    <body onload="todayDate(); disableAll(); showFutureDate(); autofill(); enableFew(); "  >
+    <!-- <body onload="todayDate(); showFutureDate(); autofill(); "  > -->
+
+        <script src = "program.js"></script>
+<!-- <script type="text/javascript"> 
     autofill();
-</script>
+</script> -->
 
     <!-- <div class="googoose"> -->
         <div class="exportContent">
@@ -130,13 +132,13 @@
                                 <li> <p  class="grey"> * Estimated Live date: (you can approximate only till the next year) </p>
                                     <!-- <input id="dateField" type="date" disabled  /> -->
                                     <label for="hertzLivedate">Hertz</label>
-                                    <input class="showHertz" type="date" name="hertzLivedate"  id="hertzLivedate">
+                                    <input class="showHertz" type="date" name="hertzLivedate"  id="hertzLivedate" id="disableID" >
                                     <label for="dollarLivedate">Dollar</label>
-                                    <input class="showDollar" type="date" name="dollarLivedate"  id="dollarLivedate">
+                                    <input class="showDollar" type="date" name="dollarLivedate"  id="dollarLivedate" id="disableID">
                                     <label for="thriftyLivedate">Thrifty</label>
-                                    <input class="showThrifty" type="date" name="thriftyLivedate" id="thriftyLivedate">
+                                    <input class="showThrifty" type="date" name="thriftyLivedate" id="thriftyLivedate" id="disableID" >
                                     <label for="fireflyLivedate">Firefly</label>
-                                    <input class="showFirefly" type="date" name="fireflyLivedate" id="fireflyLivedate">                                </li><br>
+                                    <input class="showFirefly" type="date" name="fireflyLivedate" id="fireflyLivedate" id="disableID" >                                </li><br>
                             </div>
 
 
@@ -958,5 +960,24 @@
             </div>
         </div>
 
+
+        <!-- <script src = "program.js"></script> -->
+
+        <!-- <script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src = "chosen.jquery.min.js"></script> -->
+<!--         
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+        <!-- <script type="text/javascript"> 
+            autofill();
+        </script> -->
+
+
+
     </body>
 </html>
+<script type="text/javascript"> 
+    autofill();
+</script>
