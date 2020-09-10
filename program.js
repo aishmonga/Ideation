@@ -1,5 +1,6 @@
 $(document).ready(function(){
             $('#bookingSources').chosen();
+            
         });
 
         
@@ -7,6 +8,11 @@ function preventBack(){window.history.forward();}
 setTimeout("preventBack()", 0);
 window.onunload=function(){null};
 
+function redirectToEditHTML() {
+    redirectPage = "edit.html" + queryString;
+    window.location = redirectPage;
+    return false;
+}
 
 // For adding IP address field for multiple values
         $(document).ready(function(){
@@ -333,8 +339,12 @@ function validateRequiredFields(){
   return hertz && dollar && thrifty && firefly;
 }
 
+// function makeEnvReqd(){
+//     $(".env").prop('required',true);   
+// }
+
 function callOnSubmit(){
-  return  checkBrand() && validateRequiredFields();
+  return  checkBrand() && validateRequiredFields() && makeEnvReqd();
 }
 
 function autofill(){
@@ -843,39 +853,45 @@ if(getVal("developTourF") == "&#x1F5F9"){
     var iata = document.getElementById("iata");   
     iata.setAttribute( "value", (getVal("iata")) );
 
-    var iph = document.getElementById("ipH");   
-    // iph.setAttribute( "value", (getVal("ipH")) );
-    if (getVal("ipH") == "&#9744"){
-        iph.setAttribute( "value", "");
-        $("#ipH").prop('disabled', true);
-        // console.log("A1");
-    }else{
-        iph.setAttribute( "value", (getVal("ipH")) );
-        // console.log("B1");
-    }
+    // var iph = document.getElementById("ipH");   
+    // // iph.setAttribute( "value", (getVal("ipH")) );
+    // if (getVal("ipH") == "&#9744"){
+    //     iph.setAttribute( "value", "");
+    //     $("#ipH").prop('disabled', true);
+    //     // console.log("A1");
+    // }else{
+    //     iph.setAttribute( "value", (getVal("ipH")) );
+    //     // console.log("B1");
+    // }
 
-    var ipd = document.getElementById("ipD");   
-    if (getVal("ipD") == "&#9744"){
-        ipd.setAttribute( "value", "");
-        $("#ipD").prop('disabled', true);
-    }else{
-        ipd.setAttribute( "value", (getVal("ipD")) );
-    }
+    // var ipd = document.getElementById("ipD");   
+    // if (getVal("ipD") == "&#9744"){
+    //     ipd.setAttribute( "value", "");
+    //     $("#ipD").prop('disabled', true);
+    // }else{
+    //     ipd.setAttribute( "value", (getVal("ipD")) );
+    // }
 
-    var ipt = document.getElementById("ipT");   
-    if (getVal("ipT") == "&#9744"){
-        ipt.setAttribute( "value", "");
-        $("#ipT").prop('disabled', true);
-    }else{
-        ipt.setAttribute( "value", (getVal("ipT")) );
-    }
+    // var ipt = document.getElementById("ipT");   
+    // if (getVal("ipT") == "&#9744"){
+    //     ipt.setAttribute( "value", "");
+    //     $("#ipT").prop('disabled', true);
+    // }else{
+    //     ipt.setAttribute( "value", (getVal("ipT")) );
+    // }
 
-    var ipf = document.getElementById("ipF");   
-    if (getVal("ipF") == "&#9744"){
-        ipf.setAttribute( "value", "");
-        $("#ipF").prop('disabled', true);
-    }else{
-        ipf.setAttribute( "value", (getVal("ipF")) );
-    }
+    // var ipf = document.getElementById("ipF");   
+    // if (getVal("ipF") == "&#9744"){
+    //     ipf.setAttribute( "value", "");
+    //     $("#ipF").prop('disabled', true);
+    // }else{
+    //     ipf.setAttribute( "value", (getVal("ipF")) );
+    // }
+
+    
+    document.getElementById("PROD").innerHTML = getVal("PROD") ;
+    document.getElementById("QUAL").innerHTML = getVal("QUAL") ;
+    document.getElementById("TEST").innerHTML = getVal("TEST") ;
+    // alert(" prod val: " + getVal("PROD"));
 
 }

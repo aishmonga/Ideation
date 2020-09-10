@@ -209,10 +209,9 @@
                                         
                     <p style = " font-family: 'Times New Roman', Times, serif;">
                     <b>List the IP address (s) to be used :</b><br>
-                    Hertz:&nbsp;<script> document.write(getVal('ipH'))</script>, &nbsp;&nbsp;  
-                    Dollar&nbsp;<script> document.write(getVal('ipD'))</script>, &nbsp;&nbsp;  
-                    Thrifty&nbsp;<script> document.write(getVal('ipT'))</script>, &nbsp;&nbsp;  
-                    Firefly&nbsp;<script> document.write(getVal('ipF'))</script><br>
+                    Prod:&nbsp;<script> document.write(getVal('PROD'))</script>, &nbsp;&nbsp;  
+                    Qual&nbsp;<script> document.write(getVal('QUAL'))</script>, &nbsp;&nbsp;  
+                    Test&nbsp;<script> document.write(getVal('TEST'))</script>, &nbsp;&nbsp;  
                     </p>
                         
                 
@@ -224,8 +223,9 @@
    
     
     <!-- <button type="button" onclick="window.history.go(-1)" > Edit </button> -->
-    <input type="submit" onclick="window.location('edit.html' +queryString)" value="Edit" > 
-
+    <input type="submit" onclick="redirectToEditHTML();" value="Edit" > 
+    <!-- onClick="window.open('yourURL');" -->
+    <!-- onclick="window.location('edit.html'+queryString)" -->
 
     <button class="word-export" href="javascript:void(0)"> Submit to Export as Doc</a> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
