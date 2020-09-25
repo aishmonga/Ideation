@@ -200,7 +200,7 @@ function showFutureDate(elementID){
     var year = t.getFullYear();
     var month = t.getMonth();
     var day = t.getDay();
-    var oneYearFromNow = new Date(year + 1, month, day).toISOString().split('T')[0];
+    var oneYearFromNow = new Date(year + 1, month, day-3).toISOString().split('T')[0];
     var s = new Date(year, month + 1, day -2).toISOString().split('T')[0];
 
     document.getElementsByName(id)[0].setAttribute('min', s);
