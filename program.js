@@ -62,10 +62,10 @@ function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
         // $("#filledDisabled *").prop("disabled" ,false);
         $("#filledDisabled *").attr("disabled", false).on('click');
-        dCompany.value      = null;
-        dContactName.value  = null;
-        dPhone.value        = null;
-        dEmail.value        = null;
+        // dCompany.value      = null;
+        // dContactName.value  = null;
+        // dPhone.value        = null;
+        // dEmail.value        = null;
 
     }else if(autoCheckbox.checked == true){
             document.getElementById("dCompany").value = pName.value;
@@ -390,6 +390,20 @@ function autofill(){
 
     }else{
         document.getElementById("autoCheckbox").checked = false;
+
+        
+        var dcompany = document.getElementById("dCompany");  
+        dcompany.setAttribute( "value", (getVal("dCompany")) );
+
+        var dcontactname = document.getElementById("dContactName");
+        dcontactname.setAttribute( "value", (getVal("dContactName")) );
+
+        var demail = document.getElementById("dEmail");
+        demail.setAttribute( "value", (getVal("dEmail")) );
+        
+        var dphone = document.getElementById("dPhone");
+        dphone.setAttribute( "value", (getVal("dPhone")) );
+
     } 
        
     var ccontactName = document.getElementById("cContactName");   

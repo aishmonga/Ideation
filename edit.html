@@ -17,7 +17,7 @@
 <script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src = "chosen.jquery.min.js"></script>
     </head>
-    <body onload="todayDate(); disableAll(); showFutureDate(); autofill(); enableFew(); "  >
+    <body onload="todayDate(); disableAll(); showFutureDate(); autofill(); enableFew(); autoFillDevPartner();"  >
     <!-- <body onload="todayDate(); showFutureDate(); autofill(); "  > -->
 
         <script src = "program.js"></script>
@@ -61,7 +61,7 @@
 
                             <br>
                             <br>
-                            <label><input type="checkbox" onchange="autoFillDevPartner();" name="autoCheckbox" id="autoCheckbox"  >
+                            <label><input type="checkbox" name="autoCheckbox" id="autoCheckbox"  >
                                 <p id="checkIfSame">( Check this if Trading Partner is same as Development Partner ) &nbsp;</p> </label>
 
                             <h2>* Development Information</h2>
