@@ -24,7 +24,7 @@
         <div class="exportContent">
 
             <div class="container" id="mainDiv">
-                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit()" > 
+                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit();" > 
                         <!-- onsubmit="ifSame()" -->
                         <div class="form-group container">
                             <center>
@@ -117,8 +117,9 @@
                             <br>
                             <li class="grey">* Web Site Address (URL) of system being developed:
                                 <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required
-                                pattern="(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com">
-                                <!-- "[www.]( [a-z0-9\.]+)" -->
+                                pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})" placeholder="eg: www.abc.com">
+                                <!--  pattern="(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com"> -->
+                             
                             </li>
                             <!-- todo -->
                             <br>
@@ -643,7 +644,10 @@
                                 <!-- <input class="form-control" type="text" name="bookingSource" id="bookingSource"> -->
                             </li><br>
                             <input type="text" class="hidden" id="secSource" name="secSource" value="">
-                            <li><p  class="grey">List rate/booking method(s) replaced by the XML development?</p>
+                            <li><p  class="grey">* List rate/booking method(s) replaced by the XML development?
+                                (Select atleast one booking method)
+                            </p>
+                              
                             <br>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="methodNone" id="methodNone"> None (New Partner/New Business)

@@ -344,12 +344,21 @@ function validateRequiredFields(){
   return hertz && dollar && thrifty && firefly;
 }
 
-// function makeEnvReqd(){
-//     $(".env").prop('required',true);   
-// }
+function checkMethods(){
+
+    if( ( (!methodNone.checked) && (!methodExcal.checked) && (!methodHertz.checked) && (!methodDollar.checked)&& (!methodThrifty.checked)&& (!methodXml.checked)&& (!methodGds.checked)&& (!methodHttps.checked)) ){
+        console.log("Please select atleast one Booking Methods");
+        alert("Please select atleast one Booking Methods");
+        return false;
+    }else{
+        return true;
+    }
+
+}
 
 function callOnSubmit(){
-  return  checkBrand() && validateRequiredFields() && makeEnvReqd();
+  return  checkBrand() && validateRequiredFields() && makeEnvReqd() &&checkMethods;
+//   && checkMethods()
 }
 
 function autofill(){
@@ -914,3 +923,4 @@ if(getVal("developTourF") == "&#x1F5F9"){
     // alert(" prod val: " + getVal("PROD"));
 
 }
+
