@@ -170,4 +170,8 @@ textarea {
     resize: vertical;
     /* width: 200px; */
 }
- 
+
+/* .focusClass:focus, .focusClass:active {
+  color: green;
+}
+  */

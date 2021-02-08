@@ -290,15 +290,23 @@ function doNull(id){
 }
 function checkBrand(){
 
+    var forBrandText = document.getElementById("focusClass");
+    var url = document.getElementById("webUrl");
+
     if( ( (!hCheckbox.checked) && (!dCheckbox.checked) && (!tCheckbox.checked) && (!fCheckbox.checked)) ){
-        console.log("Please select any brand");
-        alert("Please select any brand");
+        alert("Please select at least 1 brand first!");
+        forBrandText.style.color="#dc3545";
+        url.value="";
         return false;
     }else{
+        forBrandText.style.color="#000000";
+
         return true;
     }
 
 }
+
+
 
 function makeReqd(elementClass){
 var x = document.getElementsByClassName(elementClass);
@@ -346,7 +354,8 @@ function validateRequiredFields(){
 
 function checkMethods(){
 
-    if( ( (!methodNone.checked) && (!methodExcal.checked) && (!methodHertz.checked) && (!methodDollar.checked)&& (!methodThrifty.checked)&& (!methodXml.checked)&& (!methodGds.checked)&& (!methodHttps.checked)) ){
+
+    if( ( (!methodNone.checked) && (!methodExcal.checked) && (!methodHertz.checked) && (!methodDollar.checked) && (!methodThrifty.checked) && (!methodXml.checked) && (!methodGds.checked) && (!methodHttps.checked)) ){
         console.log("Please select atleast one Booking Methods");
         alert("Please select atleast one Booking Methods");
         return false;
@@ -357,8 +366,34 @@ function checkMethods(){
 }
 
 function callOnSubmit(){
-  return  checkBrand() && validateRequiredFields() && makeEnvReqd() &&checkMethods;
+  return  checkBrand() && checkMethods() && validateRequiredFields();
 //   && checkMethods()
+}   
+
+
+function disableSubmit(){
+    if (callOnSubmit == false){
+        document.getElementById("subBtn").disabled = true;
+    }else{
+        document.getElementById("subBtn").disabled = false;
+    }
+}
+
+// function focusOnBrand(){
+//     // var forBrandText = document.getElementById("focusClass");
+
+//     if(checkBrand() == true){
+//             // forBrandText.style.color="#000000";
+
+//     }else{
+//         // forBrandText.style.color="#dc3545";
+
+//     }
+// }
+
+function doBlack(){
+    var forBrandText = document.getElementById("focusClass");   
+    forBrandText.style.color="darkslategrey";
 }
 
 function autofill(){

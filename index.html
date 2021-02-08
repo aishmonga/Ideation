@@ -24,7 +24,7 @@
         <div class="exportContent">
 
             <div class="container" id="mainDiv">
-                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit();" > 
+                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit(); disableSubmit();" > 
                         <!-- onsubmit="ifSame()" -->
                         <div class="form-group container">
                             <center>
@@ -95,10 +95,10 @@
                             <input class="form-control" type="email" name="helpEmail" id="helpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg: x@xyz.com">
                             <br><br>
 
-                            <h2>* For which brands do you have a commercial agreement? (Please check all that apply)</h2>
+                            <h2 id="focusClass" >* For which brands do you have a commercial agreement? (Please check all that apply)</h2>
                             <div class="checkbox">
-                                <label><input type="checkbox" name="hCheckbox"
-                                id="hCheckbox" onchange="enableFew();">  Hertz </label> <br>
+                                <label><input type="checkbox" name="hCheckbox" class="focusClass"
+                                id="hCheckbox" onchange="enableFew();checkBrand();">  Hertz </label> <br>
                             </div>
                             <div class="checkbox">
                                 <label><input type="checkbox" name="dCheckbox"
@@ -116,7 +116,7 @@
                             <h2>The following information is  prior to providing production access.</h2>
                             <br>
                             <li class="grey">* Web Site Address (URL) of system being developed:
-                                <input class="form-control unique" type="text" name="webUrl"  id="webUrl" required
+                                <input class="form-control unique" oninput ="checkBrand();" onmouseover="doBlack();" type="text" name="webUrl"  id="webUrl" required
                                 pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})" placeholder="eg: www.abc.com">
                                 <!--  pattern="(www)+\.([a-z0-9]+\.+[a-z.]+)$" placeholder="eg: www.abc.com"> -->
                              
