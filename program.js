@@ -14,6 +14,464 @@ function redirectToEditHTML() {
     return false;
 }
 
+const store = e =>{
+    // alert("check");   
+    let formData = {
+        tDateLS: document.getElementById("tDate").value,
+        pNameLS: document.getElementById("pName").value,
+        pContactNameLS: document.getElementById("pContactName").value,
+        pEmailLS: document.getElementById("pEmail").value,
+        pPhoneLS: document.getElementById("pPhone").value,
+        autoCheckboxLS: document.getElementById("autoCheckbox").checked,
+
+        dCompanyLS: document.getElementById("dCompany").value,
+        dContactNameLS: document.getElementById("dContactName").value,
+        dEmailLS: document.getElementById("dEmail").value,
+        dPhoneLS: document.getElementById("dPhone").value,
+
+        cContactNameLS: document.getElementById("cContactName").value,
+        cEmailLS: document.getElementById("cEmail").value,
+        cPhoneLS: document.getElementById("cPhone").value,
+        helpContactNameLS: document.getElementById("helpContactName").value,
+        helpEmailLS: document.getElementById("helpEmail").value,
+
+        hCheckboxLS: document.getElementById("hCheckbox").checked,
+        dCheckboxLS: document.getElementById("dCheckbox").checked,
+        tCheckboxLS: document.getElementById("tCheckbox").checked,
+        fCheckboxLS: document.getElementById("fCheckbox").checked,
+
+        webUrlLS: document.getElementById("webUrl").value,
+        hertzLivedateLS: document.getElementById("hertzLivedate").value,
+        dollarLivedateLS: document.getElementById("dollarLivedate").value,
+        thriftyLivedateLS: document.getElementById("thriftyLivedate").value,
+        fireflyLivedateLS: document.getElementById("fireflyLivedate").value,
+
+        bookingSourcepLS: document.getElementById("bookingSourcep").value,
+        bookingSourcesLS: document.getElementById("bookingSources").value,
+        secSourceLS: document.getElementById("secSource").value,
+
+
+        methodNoneLS: document.getElementById("methodNone").checked,
+        methodExcalLS: document.getElementById("methodExcal").checked,
+        methodHertzLS: document.getElementById("methodHertz").checked,
+        methodDollarLS: document.getElementById("methodDollar").checked,
+        methodThriftyLS: document.getElementById("methodThrifty").checked,
+        methodXmlLS: document.getElementById("methodXml").checked,
+        methodGdsLS: document.getElementById("methodGds").checked,
+        methodHttpsLS: document.getElementById("methodHttps").checked,
+        
+        developRateHLS: document.getElementById("developRateH").checked,
+        developBookHLS: document.getElementById("developBookH").checked,
+        developViewHLS: document.getElementById("developViewH").checked,
+        developModifyHLS: document.getElementById("developModifyH").checked,
+        developCancelHLS: document.getElementById("developCancelH").checked,
+        developLocationHLS: document.getElementById("developLocationH").checked,
+        developDeliveryHLS: document.getElementById("developDeliveryH").checked,
+        developPrepayHLS: document.getElementById("developPrepayH").checked,
+        developTourHLS: document.getElementById("developTourH").checked,
+        developPolicyHLS: document.getElementById("developPolicyH").checked,
+
+        developRateDLS: document.getElementById("developRateD").checked,
+        developBookDLS: document.getElementById("developBookD").checked,
+        developViewDLS: document.getElementById("developViewD").checked,
+        developModifyDLS: document.getElementById("developModifyD").checked,
+        developCancelDLS: document.getElementById("developCancelD").checked,
+        developLocationDLS: document.getElementById("developLocationD").checked,
+        developTourDLS: document.getElementById("developTourD").checked,
+        
+        developRateTLS: document.getElementById("developRateT").checked,
+        developBookTLS: document.getElementById("developBookT").checked,
+        developViewTLS: document.getElementById("developViewT").checked,
+        developModifyTLS: document.getElementById("developModifyT").checked,
+        developCancelTLS: document.getElementById("developCancelT").checked,
+        developLocationTLS: document.getElementById("developLocationT").checked,
+        developTourTLS: document.getElementById("developTourT").checked,
+
+        developRateFLS: document.getElementById("developRateF").checked,
+        developBookFLS: document.getElementById("developBookF").checked,
+        developViewFLS: document.getElementById("developViewF").checked,
+        developModifyFLS: document.getElementById("developModifyF").checked,
+        developCancelFLS: document.getElementById("developCancelF").checked,
+        developLocationFLS: document.getElementById("developLocationF").checked,
+        developTourFLS: document.getElementById("developTourF").checked,
+
+        volHLS: document.getElementById("volH").value,
+        volDLS: document.getElementById("volD").value,
+        volTLS: document.getElementById("volT").value,
+        volFLS: document.getElementById("volF").value,
+
+        expTimeLS: document.getElementById("expTime").value,
+        numVehiclesLS: document.getElementById("numVehicles").value,
+        timeoutLS: document.getElementById("timeout").value,
+
+        contactInfoNameLS: document.getElementById("contactInfoName").value,
+        contactInfoEmailLS: document.getElementById("contactInfoEmail").value,
+        contactInfoPhoneLS: document.getElementById("contactInfoPhone").value,
+
+        libEmailLS: document.getElementById("libEmail").value,
+        iataLS: document.getElementById("iata").value,
+        PRODLS: document.getElementById("PROD").value,
+        QUALLS: document.getElementById("QUAL").value,
+        TESTLS: document.getElementById("TEST").value,
+    }
+
+        localStorage.setItem( "formData", JSON.stringify(formData));
+        // alert("autoCheckbox val is : " + autoCheckboxLS);
+        // console.log("autoCheckbox.value: "+ autoCheckboxLS);
+        // e.preventDefault();
+        alert();
+        alert("1:" + document.getElementById(hCheckbox) );
+        // displayData(); 
+        // alert("localstorage set func ! ")
+     
+
+
+
+
+}
+
+function displayData(){
+    if (localStorage['formData']) {   
+        let{tDateLS,pNameLS,pContactNameLS,pEmailLS,pPhoneLS,autoCheckboxLS,dCompanyLS,dContactNameLS,dEmailLS,dPhoneLS,cContactNameLS,cEmailLS,cPhoneLS,helpContactNameLS,helpEmailLS,hCheckboxLS,dCheckboxLS,tCheckboxLS,fCheckboxLS,webUrlLS,hertzLivedateLS,dollarLivedateLS,thriftyLivedateLS,fireflyLivedateLS,bookingSourcepLS,bookingSourcesLS,secSourceLS,methodNoneLS,methodExcalLS,methodHertzLS,methodDollarLS,methodThriftyLS,methodXmlLS,methodGdsLS,methodHttpsLS,developRateHLS,developBookHLS,developViewHLS,developModifyHLS,developCancelHLS,developLocationHLS,developDeliveryHLS,developPrepayHLS,developTourHLS,developPolicyHLS,developRateDLS,developBookDLS,developViewDLS,developModifyDLS,developCancelDLS,developLocationDLS,developTourDLS,developRateTLS,developBookTLS,developViewTLS,developModifyTLS,developCancelTLS,developLocationTLS,developTourTLS,developRateFLS,developBookFLS,developViewFLS,developModifyFLS,developCancelFLS,developLocationFLS,developTourFLS,volHLS,volDLS,volTLS,volFLS,expTimeLS,numVehiclesLS,timeoutLS,contactInfoNameLS,contactInfoEmailLS,contactInfoPhoneLS,libEmailLS,iataLS,PRODLS,QUALLS,TESTLS}
+         = JSON.parse( localStorage.getItem("formData") );
+        $("input[name='tDate']").val(tDateLS);
+        $("input[name='pName']").val(pNameLS);
+        $("input[name='pContactName']").val(pContactNameLS);
+        $("input[name='pEmail']").val(pEmailLS);
+        $("input[name='pPhone']").val(pPhoneLS);
+
+
+        if(autoCheckboxLS == true){
+            document.getElementById("autoCheckbox").checked = true;
+            
+        }else {
+            document.getElementById("autoCheckbox").checked = false;
+            
+        }
+
+        $("input[name='dCompany']").val(dCompanyLS);
+        $("input[name='dContactName']").val(dContactNameLS);
+        $("input[name='dEmail']").val(dEmailLS);
+        $("input[name='dPhone']").val(dPhoneLS);
+
+        $("input[name='cContactName']").val(cContactNameLS);
+        $("input[name='cEmail']").val(cEmailLS);
+        $("input[name='cPhone']").val(cPhoneLS);
+        $("input[name='helpContactName']").val(helpContactNameLS);
+        $("input[name='helpEmail']").val(helpEmailLS);
+
+        // alert("formData: " + localStorage.getItem("formData"));
+        if(hCheckboxLS == true){
+            document.getElementById("hCheckbox").checked = true;
+        }else{
+            document.getElementById("hCheckbox").checked = false;
+        }
+
+        if(dCheckboxLS == true){
+            document.getElementById("dCheckbox").checked = true;
+        }else{
+            document.getElementById("dCheckbox").checked = false;
+        }
+
+        if(tCheckboxLS == true){
+            document.getElementById("tCheckbox").checked = true;
+        }else{
+            document.getElementById("tCheckbox").checked = false;
+        }
+
+        if(fCheckboxLS == true){
+            document.getElementById("fCheckbox").checked = true;
+        }else{
+            document.getElementById("fCheckbox").checked = false;
+        }
+
+
+
+        $("input[name='webUrl']").val(webUrlLS);
+        $("input[name='hertzLivedate']").val(hertzLivedateLS);
+        $("input[name='dollarLivedate']").val(dollarLivedateLS);
+        $("input[name='thriftyLivedate']").val(thriftyLivedateLS);
+        $("input[name='fireflyLivedate']").val(fireflyLivedateLS);
+
+        $("input[name='bookingSourcep']").val(bookingSourcepLS);
+        // $("input[name='secSource']").val(secSourceLS);
+
+        // alert("bookingSourcep:" + bookingSourcepLS);        
+
+        // $("input[name='bookingSources']").val(bookingSourcesLS);
+
+
+        $("select#bookingSourcep").val(bookingSourcepLS);
+        $("select#secSource").val(bookingSourcesLS);
+        // // alert("type of secSourceLS" + typeof(secSourceLS));
+        var separatedArray  = secSourceLS.split(",");
+        alert("separatedArray : " + separatedArray);
+        
+        // for (let i = 0; i < separatedArray.length; i++) {
+        //     // alert( "separatedArray[i]:  " + separatedArray[i] );
+        // secSourceLS.separatedArray[i].selected = true;
+
+        // }
+        // if (valueToSet.indexOf(',') > -1){
+        //     var segments = valueToSet.split(','); 
+        //     for (var i = 0; i < selectObj.options.length; i++) {
+        //         for( j in segments){
+        //             if (selectObj.options[i].text== segments[j]) {
+        //                 selectObj.options[i].selected = true;
+                      
+        //             } 
+        //         }
+                
+        //     }
+
+
+
+        var obtToSelect = document.getElementById("bookingSources");
+
+        for(var i = 0; i<(obtToSelect.options.length); i++){
+            for(j in separatedArray){
+                if(obtToSelect.options[i].text == separatedArray[j]){
+                    obtToSelect.options[i].selected = true;
+                }
+            }
+          
+        }
+
+
+
+        if(methodNoneLS == true ){
+            document.getElementById("methodNone").checked = true;
+        }else{
+            document.getElementById("methodNone").checked = false;
+        } 
+        if(methodExcalLS == true ){
+            document.getElementById("methodExcal").checked = true;
+        }else{
+            document.getElementById("methodExcal").checked = false;
+        }   
+        if(methodHertzLS == true ){
+            document.getElementById("methodHertz").checked = true;
+        }else{
+            document.getElementById("methodHertz").checked = false;
+        }  
+        if(methodDollarLS == true ){
+            document.getElementById("methodDollar").checked = true;
+        }else{
+            document.getElementById("methodDollar").checked = false;
+        }  
+        if(methodThriftyLS == true ){
+            document.getElementById("methodThrifty").checked = true;
+        }else{
+            document.getElementById("methodThrifty").checked = false;
+        }   
+        if(methodXmlLS == true ){
+            document.getElementById("methodXml").checked = true;
+        }else{
+            document.getElementById("methodXml").checked = false;
+        }   
+        if(methodGdsLS == true ){
+            document.getElementById("methodGds").checked = true;
+        }else{
+            document.getElementById("methodGds").checked = false;
+        }   
+        if(methodHttpsLS == true ){
+            document.getElementById("methodHttps").checked = true;
+        }else{
+            document.getElementById("methodHttps").checked = false;
+        }
+
+       // Hertz Functionality  
+
+        if(developRateHLS == true ){
+            document.getElementById("developRateH").checked = true;
+        }else{
+            document.getElementById("developRateH").checked = false;
+        }  
+        if(developBookHLS == true ){
+            document.getElementById("developBookH").checked = true;
+        }else{
+            document.getElementById("developBookH").checked = false;
+        }   
+        if(developViewHLS == true ){
+            document.getElementById("developViewH").checked = true;
+        }else{
+            document.getElementById("developViewH").checked = false;
+        }   
+        if(developModifyHLS == true ){
+            document.getElementById("developModifyH").checked = true;
+        }else{
+            document.getElementById("developModifyH").checked = false;
+        }   
+        if(developCancelHLS == true ){
+            document.getElementById("developCancelH").checked = true;
+        }else{
+            document.getElementById("developCancelH").checked = false;
+        }   
+        if(developLocationHLS == true ){
+            document.getElementById("developLocationH").checked = true;
+        }else{
+            document.getElementById("developLocationH").checked = false;
+        }   
+        if(developDeliveryHLS == true ){
+            document.getElementById("developDeliveryH").checked = true;
+        }else{
+            document.getElementById("developDeliveryH").checked = false;
+        }   
+        if(developPrepayHLS == true ){
+            document.getElementById("developPrepayH").checked = true;
+        }else{
+            document.getElementById("developPrepayH").checked = false;
+        }   
+        if(developTourHLS == true ){
+            document.getElementById("developTourH").checked = true;
+        }else{
+            document.getElementById("developTourH").checked = false;
+        }   
+        if(developPolicyHLS == true ){
+            document.getElementById("developPolicyH").checked = true;
+        }else{
+            document.getElementById("developPolicyH").checked = false;
+        }
+
+        // Dollar Functionality
+        
+        if(developRateDLS == true ){
+            document.getElementById("developRateD").checked = true;
+        }else{
+            document.getElementById("developRateD").checked = false;
+        }   
+        if(developBookDLS == true ){
+            document.getElementById("developBookD").checked = true;
+        }else{
+            document.getElementById("developBookD").checked = false;
+        }   
+        if(developViewDLS == true ){
+            document.getElementById("developViewD").checked = true;
+        }else{
+            document.getElementById("developViewD").checked = false;
+        }   
+        if(developModifyDLS == true ){
+            document.getElementById("developModifyD").checked = true;
+        }else{
+            document.getElementById("developModifyD").checked = false;
+        }   
+        if(developCancelDLS == true ){
+            document.getElementById("developCancelD").checked = true;
+        }else{
+            document.getElementById("developCancelD").checked = false;
+        }   
+        if(developLocationDLS == true ){
+            document.getElementById("developLocationD").checked = true;
+        }else{
+            document.getElementById("developLocationD").checked = false;
+        }   
+        if(developTourDLS == true ){
+            document.getElementById("developTourD").checked = true;
+        }else{
+            document.getElementById("developTourD").checked = false;
+        }
+
+        //  Thrifty Functionality
+
+        if(developRateTLS == true ){
+            document.getElementById("developRateT").checked = true;
+        }else{
+            document.getElementById("developRateT").checked = false;
+        }   
+        if(developBookTLS == true ){
+            document.getElementById("developBookT").checked = true;
+        }else{
+            document.getElementById("developBookT").checked = false;
+        }   
+        if(developViewTLS == true ){
+            document.getElementById("developViewT").checked = true;
+        }else{
+            document.getElementById("developViewT").checked = false;
+        }   
+        if(developModifyTLS == true ){
+            document.getElementById("developModifyT").checked = true;
+        }else{
+            document.getElementById("developModifyT").checked = false;
+        }   
+        if(developCancelTLS == true ){
+            document.getElementById("developCancelT").checked = true;
+        }else{
+            document.getElementById("developCancelT").checked = false;
+        }   
+        if(developLocationTLS == true ){
+            document.getElementById("developLocationT").checked = true;
+        }else{
+            document.getElementById("developLocationT").checked = false;
+        }   
+        if(developTourTLS == true ){
+            document.getElementById("developTourT").checked = true;
+        }else{
+            document.getElementById("developTourT").checked = false;
+        }
+
+        //  Firefly Functionality
+
+        if(developRateFLS == true ){
+            document.getElementById("developRateF").checked = true;
+        }else{
+            document.getElementById("developRateF").checked = false;
+        }   
+        if(developBookFLS == true ){
+            document.getElementById("developBookF").checked = true;
+        }else{
+            document.getElementById("developBookF").checked = false;
+        }   
+        if(developViewFLS == true ){
+            document.getElementById("developViewF").checked = true;
+        }else{
+            document.getElementById("developViewF").checked = false;
+        }   
+        if(developModifyFLS == true ){
+            document.getElementById("developModifyF").checked = true;
+        }else{
+            document.getElementById("developModifyF").checked = false;
+        }  
+        if(developCancelFLS == true ){
+            document.getElementById("developCancelF").checked = true;
+        }else{
+            document.getElementById("developCancelF").checked = false;
+        }   
+        if(developLocationFLS == true ){
+            document.getElementById("developLocationF").checked = true;
+        }else{
+            document.getElementById("developLocationF").checked = false;
+        }   
+        if(developTourFLS == true ){
+            document.getElementById("developTourF").checked = true;
+        }else{
+            document.getElementById("developTourF").checked = false;
+        } 
+
+        $("input[name='volH']").val(volHLS);
+        $("input[name='volD']").val(volDLS);
+        $("input[name='volT']").val(volTLS);
+        $("input[name='volF']").val(volFLS);
+
+        $("input[name='expTime']").val(expTimeLS);
+        $("input[name='numVehicles']").val(numVehiclesLS);
+        $("input[name='timeout']").val(timeoutLS);
+
+        $("input[name='contactInfoName']").val(contactInfoNameLS);
+        $("input[name='contactInfoEmail']").val(contactInfoEmailLS);
+        $("input[name='contactInfoPhone']").val(contactInfoPhoneLS);
+
+        $("input[name='libEmail']").val(libEmailLS);
+        $("input[name='iata']").val(iataLS);
+        // $("input[name='PROD").val(PRODLS);
+        document.getElementById("PROD").value = PRODLS; 
+        $("input[name='QUAL']").val(QUALLS);
+        $("input[name='TEST']").val(TESTLS);
+
+    }
+    
+}
+
+
 // For adding IP address field for multiple values
         $(document).ready(function(){
             var maxField = 10; //Input fields increment limitation
@@ -62,10 +520,10 @@ function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
         // $("#filledDisabled *").prop("disabled" ,false);
         $("#filledDisabled *").attr("disabled", false).on('click');
-        // dCompany.value      = null;
-        // dContactName.value  = null;
-        // dPhone.value        = null;
-        // dEmail.value        = null;
+        // localStorage.removeItem("dCompany");
+        // localStorage.removeItem("dContactName");
+        // localStorage.removeItem("dEmail");
+        // localStorage.removeItem("dPhone");
 
     }else if(autoCheckbox.checked == true){
             document.getElementById("dCompany").value = pName.value;
@@ -204,8 +662,12 @@ function showFutureDate(elementID){
     var s = new Date(year, month, day +12).toISOString().split('T')[0];
 
     document.getElementsByName(id)[0].setAttribute('min', s);
-    document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
+    newFunction();
   
+
+    function newFunction() {
+        document.getElementsByName(id)[0].setAttribute('max', oneYearFromNow);
+    }
     // alert(oneYearFromNow);
 }
 
@@ -478,10 +940,6 @@ function autofill(){
         document.getElementById("hCheckbox").checked = false;
     }
 
-    // var dcheckbox = document.getElementById("dCheckbox");   
-    // if(dcheckbox.value == "on"){
-    //     dcheckbox.checked = true;
-    // } 
     if(getVal("dCheckbox") == "&#x1F5F9"){
         
         document.getElementById("dCheckbox").checked = true;
@@ -505,16 +963,6 @@ function autofill(){
     }else{
         document.getElementById("fCheckbox").checked = false;
     }
-
-    // var tcheckbox = document.getElementById("tCheckbox"); 
-    // if(tcheckbox.value == "on"){
-    //     tcheckbox.checked = true;
-    // }   
-
-    // var fcheckbox = document.getElementById("fCheckbox");  
-    // if(fcheckbox.value == "on"){
-    //     fcheckbox.checked = true;
-    // }  
 
 
     var weburl = document.getElementById("webUrl");   
