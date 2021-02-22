@@ -18,7 +18,7 @@
 <script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src = "chosen.jquery.min.js"></script>
     </head>
-    <body onload=" displayData(); todayDate(); disableAll(); showFutureDate();">
+    <body onload=" displayData(); todayDate(); disableAll(); showFutureDate(); autoFillDevPartner();" onunload="unloadFunc();">
         <!---->
 <script src = "program.js"></script>
 
@@ -26,7 +26,7 @@
         <div class="exportContent">
 
             <div class="container" id="mainDiv">
-                <form id="myForm"  method="GET"  action="template.html" onsubmit="return store(event);" > 
+                <form id="myForm"  method="GET"  action="template.html" onsubmit="return callOnSubmit()" > 
                     <!-- onsubmit="return store(event); callOnSubmit(); disableSubmit();" -->
                         <!-- onsubmit="ifSame()" -->
                         <div class="form-group container">
@@ -144,7 +144,8 @@
                                 <label for="bookingSource"> <p  class="grey">What are the booking source market(s) (List primary market. If unknown,
                                 list country of incorporation)?</p>
                                 </label><br>
-                                * Primary Source <select id="bookingSourcep" name="bookingSourcep" required data-placeholder ="Select a country" >
+                                * Primary Source <select id="bookingSourcep" name="bookingSourcep" required data-placeholder ="Select a country"  >
+                                        <!-- onchange="store();" -->
                                         <option disabled selected>Select a country</option>
                                         <option value="Afganistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
@@ -395,7 +396,7 @@
                                 </select> &nbsp;
 
 
-                                Secondary Source <select id="bookingSources" name="bookingSources" multiple="multiple" data-placeholder ="Select other country">
+                                Secondary Source <select id="bookingSources" name="bookingSources" multiple="multiple" data-placeholder ="Select other country"  >
 
                                         <option value="Afganistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>

@@ -14,6 +14,12 @@ function redirectToEditHTML() {
     return false;
 }
 
+// window.onbeforeunload = function() {
+    
+//     return store() && displayData(); // stores before the page closes  
+    
+// }
+
 const store = e =>{
     // alert("check");   
     let formData = {
@@ -119,13 +125,13 @@ const store = e =>{
         // alert("autoCheckbox val is : " + autoCheckboxLS);
         // console.log("autoCheckbox.value: "+ autoCheckboxLS);
         // e.preventDefault();
-        alert();
-        alert("1:" + document.getElementById(hCheckbox) );
+        // alert();
+        // alert("1:" + document.getElementById(hCheckbox) );
         // displayData(); 
         // alert("localstorage set func ! ")
      
 
-
+        return true;
 
 
 }
@@ -193,7 +199,8 @@ function displayData(){
         $("input[name='thriftyLivedate']").val(thriftyLivedateLS);
         $("input[name='fireflyLivedate']").val(fireflyLivedateLS);
 
-        $("input[name='bookingSourcep']").val(bookingSourcepLS);
+        // $("input[name='bookingSourcep']").val(bookingSourcepLS);
+        // $("input[name='bookingSources']").val(bookingSourcesLS);
         // $("input[name='secSource']").val(secSourceLS);
 
         // alert("bookingSourcep:" + bookingSourcepLS);        
@@ -205,30 +212,13 @@ function displayData(){
         $("select#secSource").val(bookingSourcesLS);
         // // alert("type of secSourceLS" + typeof(secSourceLS));
         var separatedArray  = secSourceLS.split(",");
-        alert("separatedArray : " + separatedArray);
+        // alert("separatedArray : " + separatedArray);
+
+
+        var obtToSelect = document.getElementById("secSource");
+        // console.log("obtToSelect type: " + typeof(obtToSelect));
         
-        // for (let i = 0; i < separatedArray.length; i++) {
-        //     // alert( "separatedArray[i]:  " + separatedArray[i] );
-        // secSourceLS.separatedArray[i].selected = true;
-
-        // }
-        // if (valueToSet.indexOf(',') > -1){
-        //     var segments = valueToSet.split(','); 
-        //     for (var i = 0; i < selectObj.options.length; i++) {
-        //         for( j in segments){
-        //             if (selectObj.options[i].text== segments[j]) {
-        //                 selectObj.options[i].selected = true;
-                      
-        //             } 
-        //         }
-                
-        //     }
-
-
-
-        var obtToSelect = document.getElementById("bookingSources");
-
-        for(var i = 0; i<(obtToSelect.options.length); i++){
+        for(var i = 0; i<(obtToSelect.length); i++){
             for(j in separatedArray){
                 if(obtToSelect.options[i].text == separatedArray[j]){
                     obtToSelect.options[i].selected = true;
@@ -520,10 +510,16 @@ function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
         // $("#filledDisabled *").prop("disabled" ,false);
         $("#filledDisabled *").attr("disabled", false).on('click');
-        // localStorage.removeItem("dCompany");
-        // localStorage.removeItem("dContactName");
-        // localStorage.removeItem("dEmail");
-        // localStorage.removeItem("dPhone");
+         // here
+        var formDataArray = JSON.parse( localStorage.getItem("formData") );
+
+        for(var v in formDataArray){
+            if(v == document.getElementById("dcompany")){
+                alert("removed");
+                // localStorage.removeItem("dCompany");
+            }
+            
+        }
 
     }else if(autoCheckbox.checked == true){
             document.getElementById("dCompany").value = pName.value;
@@ -649,11 +645,6 @@ function showFutureDate(elementID){
     var id = elementID;
 
     var t = new Date();
-    // var today = t.toISOString().split('T')[0];
-
-    // var s = new Date();  //S is seven days from noww
-    // s.setDate(s.getDate()+7);
-    // alert("7 days from now: "+ s);
 
     var year = t.getFullYear();
     var month = t.getMonth();
@@ -828,7 +819,7 @@ function checkMethods(){
 }
 
 function callOnSubmit(){
-  return  checkBrand() && checkMethods() && validateRequiredFields();
+  return  checkBrand() && checkMethods() && validateRequiredFields() && store() && disableSubmit();
 //   && checkMethods()
 }   
 
@@ -1407,3 +1398,6 @@ if(getVal("developTourF") == "&#x1F5F9"){
 
 }
 
+function unloadFunc(){
+    alert("unload function works!");
+}
