@@ -851,10 +851,14 @@ function doBlack(){
 
 function autofill(){
 
-    // alert("check: " +   getVal("pName"));    
+    alert("check: " +   getVal("pName"));    
 
     var pname = document.getElementById("pName");   
     pname.setAttribute( "value", (getVal("pName")) );
+
+    // var pname ;
+    // pname.setAttribute( "value", (getVal("pName")) );
+        
 
     var pcontactname = document.getElementById("pContactName");   
     pcontactname.setAttribute( "value", (getVal("pContactName")) );
@@ -962,6 +966,8 @@ function autofill(){
     
     var hertzLivedate = document.getElementById("hertzLivedate");   
     hertzLivedate.setAttribute( "value", (getVal("hertzLivedate")) );   
+
+    alert("hertzLivedate: " + getVal("hertzLivedate"));
 
     var dollarLivedate = document.getElementById("dollarLivedate");   
     dollarLivedate.setAttribute( "value", (getVal("dollarLivedate")) );   
