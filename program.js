@@ -4,9 +4,9 @@ $(document).ready(function(){
         });
 
         
-function preventBack(){window.history.forward();}
-setTimeout("preventBack()", 0);
-window.onunload=function(){null};
+// function preventBack(){window.history.forward();}
+// setTimeout("preventBack()", 0);
+// window.onunload=function(){null};
 
 function redirectToEditHTML() {
     redirectPage = "edit.html" + queryString;
@@ -14,11 +14,12 @@ function redirectToEditHTML() {
     return false;
 }
 
-// window.onbeforeunload = function() {
-    
-//     return store() && displayData(); // stores before the page closes  
-    
-// }
+window.onbeforeunload = function() {
+    if( store() && displayData() ){ // stores before the page closes 
+        return true;  
+    }
+      
+}
 
 const store = e =>{
     // alert("check");   
@@ -508,26 +509,31 @@ var urlParams = new URLSearchParams(queryString);
 
 function autoFillDevPartner(){
     if(autoCheckbox.checked == false){
-        // $("#filledDisabled *").prop("disabled" ,false);
-        $("#filledDisabled *").attr("disabled", false).on('click');
-         // here
-        var formDataArray = JSON.parse( localStorage.getItem("formData") );
+        $("#filledDisabled *").prop("disabled" ,false);
+        // $("#filledDisabled *").attr("disabled", false).on('click');
+        // var formDataArray = JSON.parse( localStorage.getItem("formData") );
 
-        for(var v in formDataArray){
-            if(v == document.getElementById("dcompany")){
-                alert("removed");
-                // localStorage.removeItem("dCompany");
-            }
-            
-        }
+        // for(var v in formDataArray){
+        //     if(v == document.getElementById("dcompany")){
+        //         alert("removed");
+        //         // localStorage.removeItem("dCompany");
+        //     }
+        // }
+
+        // alert("unchecked!");
+        doNull("dCompany");
+        doNull("dContactName");
+        doNull("dEmail");
+        doNull("dPhone");        
+
 
     }else if(autoCheckbox.checked == true){
+        // alert("checked!");
             document.getElementById("dCompany").value = pName.value;
             document.getElementById("dContactName").value = pContactName.value;
             document.getElementById("dEmail").value = pEmail.value;
             document.getElementById("dPhone").value = pPhone.value;
             $("#filledDisabled *").attr("disabled", "disabled").off('click');
-            // alert("pname: " + pName.value);
     }
 
 }
@@ -818,19 +824,45 @@ function checkMethods(){
 
 }
 
+
+// function disableSubmit(){
+//     if (callOnSubmit == false){
+//         alert("submit should be disabled");
+//         document.getElementById("subBtn").disabled = true; //disable
+//     }else{
+//         alert("submit should be enabled");
+//         document.getElementById("subBtn").disabled = false; //enable
+//     }
+// }
+
+function checkPrimaryVal(){
+    var pri = document.getElementById("bookingSourcep").value;
+    if (pri == "Select a country"){
+        // doNull("bookingSourcep");
+        alert("Please select atleast Primary Booking Sources");
+        return false;
+    }else{
+        return true;
+    }
+}
+
 function callOnSubmit(){
-  return  checkBrand() && checkMethods() && validateRequiredFields() && store() && disableSubmit();
+    // checkPrimaryVal();
+
+    if (checkBrand() && checkMethods() && validateRequiredFields() && store() && checkPrimaryVal()){ 
+        // alert("correct");
+        // alert( "Primary dropdown value: " + document.getElementById("bookingSourcep").value );
+        // document.getElementById("subBtn").disabled = false; //enable
+        return true;
+    }else{
+        // alert("something's wrong");
+        // document.getElementById("subBtn").disabled = true; //disable
+        return false;
+    }
+    
 //   && checkMethods()
 }   
 
-
-function disableSubmit(){
-    if (callOnSubmit == false){
-        document.getElementById("subBtn").disabled = true;
-    }else{
-        document.getElementById("subBtn").disabled = false;
-    }
-}
 
 // function focusOnBrand(){
 //     // var forBrandText = document.getElementById("focusClass");
@@ -851,7 +883,7 @@ function doBlack(){
 
 function autofill(){
 
-    alert("check: " +   getVal("pName"));    
+    // alert("check: " +   getVal("pName"));    
 
     var pname = document.getElementById("pName");   
     pname.setAttribute( "value", (getVal("pName")) );
@@ -967,7 +999,7 @@ function autofill(){
     var hertzLivedate = document.getElementById("hertzLivedate");   
     hertzLivedate.setAttribute( "value", (getVal("hertzLivedate")) );   
 
-    alert("hertzLivedate: " + getVal("hertzLivedate"));
+    // alert("hertzLivedate: " + getVal("hertzLivedate"));
 
     var dollarLivedate = document.getElementById("dollarLivedate");   
     dollarLivedate.setAttribute( "value", (getVal("dollarLivedate")) );   
