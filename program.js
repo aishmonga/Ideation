@@ -668,60 +668,66 @@ function showFutureDate(elementID){
     // alert(oneYearFromNow);
 }
 
-
-function toDoc(element){
-
-    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
-    var postHtml = "</body></html>";
-
-    var html, blob, url, css;
-
-    css = (
-        '<style>' +
-        '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
-        'div.WordSection1 {page: WordSection1;}' +
-        '</style>'
-      );
-
-    // css = (
-    // '<style>' +
-
-    // 'mso-ansi-font-weight: {bolder} ' +
-
-    // 'p {font-family: "Times New Roman", Georgia, Serif; font-size: 14pt;}' +
-
-    // '</style>'
-    // );
-
-    var html = preHtml+document.getElementById(element).innerHTML+postHtml;
-
-    var blob = new Blob(['\ufeff',css + html], {
-        type: 'application/msword'
+function toPDF(){
+    
+    var doc = new jsPDF();
+    var elementHTML = $('#contnet').html();
+    var specialElementHandlers = {
+        '#elementH': function (element, renderer) {
+            return true;
+        }
+    };
+    doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
     });
 
-    // var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-    var url = URL.createObjectURL(blob);
+    // Save the PDF
+    doc.save('Appendix-B.pdf');
 
-    // filename = filename?filename+'.doc':'Appendix-B.doc';
-
-    var downloadLink = document.createElement("a");
-
-    document.body.appendChild(downloadLink);
-    downloadLink.href = url;
-    downloadLink.download = "Appendix-B";
-
-    if(navigator.msSaveOrOpenBlob ){
-        navigator.msSaveOrOpenBlob(blob, "Appendix-B.doc" );
-    }else{
-        // downloadLink.href = url;
-
-        // downloadLink.download = "Appendix-B";
-
-        downloadLink.click();
-    }
-
-    document.body.removeChild(downloadLink);
 }
+
+
+
+// function toDoc(element){
+
+//     var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+//     var postHtml = "</body></html>";
+
+//     var html, blob, url, css;
+
+//     css = (
+//         '<style>' +
+//         '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
+//         'div.WordSection1 {page: WordSection1;}' +
+//         '</style>'
+//       );
+
+//     var html = preHtml+document.getElementById(element).innerHTML+postHtml;
+
+//     var blob = new Blob(['\ufeff',css + html], {
+//         type: 'application/msword'
+//     });
+
+//     // var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+//     var url = URL.createObjectURL(blob);
+
+//     // filename = filename?filename+'.doc':'Appendix-B.doc';
+
+//     var downloadLink = document.createElement("a");
+
+//     document.body.appendChild(downloadLink);
+//     downloadLink.href = url;
+//     downloadLink.download = "Appendix-B";
+
+//     if(navigator.msSaveOrOpenBlob ){
+//         navigator.msSaveOrOpenBlob(blob, "Appendix-B.doc" );
+//     }else{
+//         downloadLink.click();
+//     }
+
+//     document.body.removeChild(downloadLink);
+// }
 
 
 function getVal(key){
