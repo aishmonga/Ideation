@@ -668,24 +668,25 @@ function showFutureDate(elementID){
     // alert(oneYearFromNow);
 }
 
-function toPDF(){
+// function toPDF(){
     
-    var doc = new jsPDF();
-    var elementHTML = $('#contnet').html();
-    var specialElementHandlers = {
-        '#elementH': function (element, renderer) {
-            return true;
-        }
-    };
-    doc.fromHTML(elementHTML, 15, 15, {
-        'width': 170,
-        'elementHandlers': specialElementHandlers
-    });
+//     var doc = new jsPDF();
+//     var elementHTML = $('#contnet').html();
+//     var specialElementHandlers = {
+//         '#elementH': function (element, renderer) {
+//             return true;
+//         }
+//     };
+//     doc.fromHTML(elementHTML, 15, 15, {
+//         'height':1000,
+//         'width': 170,
+//         'elementHandlers': specialElementHandlers
+//     });
 
-    // Save the PDF
-    doc.save('Appendix-B.pdf');
+//     // Save the PDF
+//     doc.save('Appendix-B.pdf');
 
-}
+// }
 
 
 
